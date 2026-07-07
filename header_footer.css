@@ -70,6 +70,7 @@ body.loading {
     position: fixed;
     top: 2.5rem;
     left: 50%;
+    opacity: 0;
     transform: translateX(-50%);
     z-index: 100;
     color: var(--light);
@@ -330,6 +331,11 @@ body.loading {
     margin-right: auto;
 }
 
+.footer-col ul {
+    margin: 0;
+    padding: 0;
+}
+
 .footer-top {
     display: flex;
     justify-content: space-between;
@@ -370,24 +376,6 @@ body.loading {
     margin-right: 0.5rem;
 }
 
-.social-links a {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    color: var(--light);
-    font-size: 1.1rem;
-}
-
-.social-links a:hover {
-    border-color: var(--light);
-    background: rgba(255, 255, 255, 0.1);
-}
-
 .footer-links-wrapper {
     display: flex;
     gap: 8rem;
@@ -422,7 +410,6 @@ body.loading {
     padding-bottom: 2rem;
     position: relative;
     z-index: 2;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom p {
@@ -431,23 +418,237 @@ body.loading {
 }
 
 .footer-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     width: 100%;
-    max-width: 1352px;
-    z-index: 1;
-    pointer-events: none;
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
+    line-height: 0;
 }
 
 .nick-img-overlay {
     width: 100%;
+    max-width: 1352px;
     height: auto;
-    object-fit: contain;
     opacity: 0.5;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 1400px) {
+    .footer-overlay {
+        width: 100%;
+        left: 0;
+        top: auto;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-overlay {
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: auto;
+        bottom: 0;
+    }
+
+    .nick-img-overlay {
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+/* SERVICES MEGA-MENU DROPDOWN */
+.services-dropdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.services-dropdown-overlay.open {
+    pointer-events: auto;
+    clip-path: inset(0 0 0% 0);
+}
+
+.dropdown-inner {
+    background: #fff;
+    color: var(--dark);
+    width: 100%;
+    padding: 7rem 4rem 3.5rem 4rem;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.dropdown-close {
+    position: absolute;
+    top: 1.8rem;
+    right: 2.5rem;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--dark);
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-close:hover {
+    background: var(--primary);
+    color: var(--dark);
+}
+
+.dropdown-header {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.dd-card {
+    display: block;
+    text-decoration: none;
+    color: var(--dark);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1.5px solid rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    background: #fff;
+}
+
+.dd-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    border-color: var(--primary);
+    color: var(--dark);
+}
+
+.dd-card-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.dd-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.dd-card:hover .dd-card-img img {
+    transform: scale(1.05);
+}
+
+.dd-card-body {
+    padding: 1.2rem 1.4rem 1.4rem;
+}
+
+.dd-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.6rem;
+    gap: 0.5rem;
+}
+
+.dd-card-top h3 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+    color: var(--dark);
+    margin: 0;
+    flex: 1;
+}
+
+.dd-arrow {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: var(--dark);
+    transition: transform 0.3s ease;
+    margin-top: 2px;
+}
+
+.dd-card:hover .dd-arrow {
+    transform: translateX(3px);
+}
+
+.dd-card-body>p {
+    font-size: 13px;
+    color: var(--grey);
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.services-dropdown-overlay .dd-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.services-dropdown-overlay.open .dd-card:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.25s;
+}
+
+.services-dropdown-overlay.open .dd-card:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.35s;
+}
+
+.services-dropdown-overlay.open .dd-card:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.45s;
+}
+
+.services-dropdown-overlay.open .dd-card:hover {
+    transform: translateY(-4px);
+}
+
+.nav-links .dropdown>a .dropdown-arrow {
+    transition: transform 0.35s ease;
+}
+
+.nav-links .dropdown>a.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.nav-links .dropdown>a.active::after {
+    width: 0;
 }
 
 /* RESPONSIVE MEDIA QUERIES */
@@ -459,6 +660,17 @@ body.loading {
 
     .footer-links-wrapper {
         gap: 4rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .dropdown-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .dropdown-inner {
+        padding: 6.5rem 2.5rem 3rem;
     }
 }
 
@@ -549,5 +761,20 @@ body.loading {
     .banner-contact-links {
         flex-direction: column;
         gap: 1.5rem;
+    }
+
+    .dropdown-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dropdown-inner {
+        padding: 6rem 1.5rem 2.5rem;
+        overflow-y: auto;
+        max-height: 100vh;
+    }
+
+    .dropdown-header {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }

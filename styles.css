@@ -1,4 +1,4 @@
- /* GLOBAL TYPOGRAPHY & COLORS  */
+/* TYPOGRAPHY & VARIABLES */
 @font-face {
     font-family: 'Sharp Sans';
     src: url('font/Sharp Sans Light.woff2') format('woff2');
@@ -70,10 +70,6 @@ a {
     font-weight: 600;
 }
 
-a:hover {
-    color: inherit;
-}
-
 p {
     font-size: var(--p-size);
     line-height: var(--p-lh);
@@ -90,7 +86,7 @@ h2 {
     font-size: var(--h2-size);
     line-height: var(--h2-lh);
     font-weight: 600;
-    color: #000000;
+    color: var(--dark);
 }
 
 h3 {
@@ -99,24 +95,67 @@ h3 {
     font-weight: 600;
 }
 
- /* HERO SECTION  */
+/* HERO SECTION */
 .hero-section {
     position: relative;
     height: 100vh;
     min-height: 850px;
-    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.65)), url('images/Hero-Image.webp') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    color: var(--light);
     padding: 0 5rem 3rem 5rem;
+    overflow: hidden;
+    color: var(--light);
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 5rem 8rem 5rem;
+    z-index: 1;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.slide-bg,
+.slide-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.slide-bg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slide-bg-video {
+    width: 100vw;
+    height: 100vh;
 }
 
 .hero-content {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 3.5rem;
     gap: 4rem;
 }
 
@@ -139,10 +178,12 @@ h3 {
     opacity: 0.95;
 }
 
-.hero-bottom {
+.hero-bottom-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 10;
     padding-top: 2rem;
 }
 
@@ -169,16 +210,16 @@ h3 {
 .play-btn {
     font-size: 2.2rem;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .play-btn:hover {
-    color: var(--primary);
+    transform: scale(1.1);
 }
 
- /* CORE SERVICES  */
+/* SERVICES SECTION */
 .services-section {
-    background: #FFFFFF;
+    background: var(--light);
     padding-top: 90px;
     padding-bottom: 90px;
     overflow: hidden;
@@ -195,16 +236,28 @@ h3 {
 }
 
 .nav-arrow-btn {
-    background: none;
-    border: none;
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    color: var(--dark);
     cursor: pointer;
-    color: #000000;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-arrow-btn:hover {
+    border-color: var(--dark);
+    background-color: #f5f5f5;
+    transform: scale(1.05);
+}
+
+.nav-arrow-btn:active {
+    transform: scale(0.95);
 }
 
 .services-slider-container {
@@ -264,13 +317,13 @@ h3 {
     width: 100%;
 }
 
-.service-info h3 {
+.service-info h3,
+.service-info p {
     margin: 0;
 }
 
 .service-info p {
     color: #484848;
-    margin: 0;
 }
 
 .arrow-link {
@@ -284,12 +337,12 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #000000;
+    color: var(--dark);
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .service-card:hover .arrow-link {
-    background: #000000;
+    background: var(--dark);
     transform: scale(1.1) rotate(-45deg);
 }
 
@@ -297,7 +350,7 @@ h3 {
     color: var(--primary);
 }
 
- /* SNAPSHOT SECTION  */
+/* SNAPSHOT SECTION */
 .snapshot-section {
     background: var(--dark);
     color: var(--light);
@@ -307,7 +360,7 @@ h3 {
 .snapshot-left h2 {
     max-width: 551px;
     letter-spacing: -1.5px;
-    color: #FFFFFF;
+    color: var(--light);
 }
 
 .stat-number {
@@ -324,7 +377,7 @@ h3 {
     color: var(--light);
 }
 
- /* INSIGHTS SECTION  */
+/* INSIGHTS SECTION */
 .insights-section {
     background: url('images/Civil-Insight-Image.webp') center/cover no-repeat;
     width: 100%;
@@ -332,7 +385,7 @@ h3 {
     position: relative;
     padding-top: 555px;
     padding-bottom: 5rem;
-    color: #FFFFFF;
+    color: var(--light);
 }
 
 .container-custom {
@@ -362,17 +415,14 @@ h3 {
     width: 100%;
 }
 
-.insights-title h2 {
-    margin: 0;
-}
-
+.insights-title h2,
 .insights-title p {
     margin: 0;
 }
 
 .btn-solid {
-    background: #FFFFFF;
-    color: #000000;
+    background: var(--light);
+    color: var(--dark);
     padding: 8px 24px;
     border-radius: 44px;
     font-weight: 600;
@@ -408,7 +458,7 @@ h3 {
 .insight-card p {
     font-size: 16px;
     line-height: 26px;
-    color: #FFFFFF;
+    color: var(--light);
     margin: 0;
 }
 
@@ -437,7 +487,7 @@ h3 {
     background-position: 0 0;
 }
 
- /* MEDIA QUERIES  */
+/* MEDIA QUERIES */
 @media (max-width: 1200px) {
     :root {
         --h1-size: 54px;
@@ -492,19 +542,33 @@ h3 {
         padding: 8rem 1.5rem 3rem 1.5rem;
     }
 
-    /* Enforce one by one sliding layout for services on mobile */
+    .carousel-nav {
+        display: none !important;
+    }
+
+    .services-slider-container {
+        overflow-x: visible;
+        scroll-snap-type: none;
+    }
+
+    .services-grid {
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+    }
+
     .service-card {
-        flex: 0 0 100%;
+        flex: unset;
+        width: 100%;
         max-width: 100%;
     }
 
     .service-card img,
     .service-card.active img {
         height: 350px;
-        /* Uniform height for mobile cards */
+        width: 100%;
     }
 
-    /* Enforce one by one stacking for insights grid */
     .insights-grid {
         grid-template-columns: 1fr;
     }
@@ -516,7 +580,6 @@ h3 {
 
     .insight-img {
         height: 300px;
-        /* Reduced image height for mobile screen real-estate */
     }
 
     .snapshot-section {
