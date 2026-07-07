@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bowen Executive - Civil Construction Executive Search</title>
+    <meta name="description"
+        content="Bowen Executive recruits senior leadership, retained executive search, and Civil Site Superintendents for U.S. civil construction. One sector. One focus.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header_footer.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP & Lenis Smooth Scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js" defer></script>
+</head>
+
+<body class="loading">
+
+    <div class="preloader">
+        <img src="images/Logo.svg" alt="Logo Loader" class="loader-logo">
+    </div>
+
+    <div class="mobile-nav-overlay" aria-hidden="true" role="navigation">
+        <div class="mobile-nav-close" aria-label="Close menu" role="button" tabindex="0">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Civil Insight</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#" class="mobile-contact-btn">Contact</a></li>
+        </ul>
+    </div>
+
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main Navigation">
+            <div class="logo">
+                <img src="images/Logo.svg" alt="Bowen Executive Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Services <i class="fa-solid fa-chevron-down nav-arrow" aria-hidden="true"></i></a>
+                </li>
+                <li><a href="#">Civil Insight</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="nav-contact">
+                <a href="#" class="btn-outline">Contact</a>
+            </div>
+            <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero sections -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text-left">
+                <h1 class="split-text">Specialist retained<br>executive search in U.S.<br>civil construction.</h1>
+            </div>
+            <div class="hero-text-right">
+                <p>Bowen Executive recruits exclusively within U.S. civil construction — senior leadership, retained
+                    executive search, and the Civil Site Superintendents who run the field. One sector. One focus.</p>
+            </div>
+        </div>
+
+        <div class="hero-bottom">
+            <div class="pagination">
+                <span class="dot active" aria-label="Slide 1"></span>
+                <span class="dot" aria-label="Slide 2"></span>
+                <span class="dot" aria-label="Slide 3"></span>
+            </div>
+            <div class="play-btn" aria-label="Play video" role="button" tabindex="0">
+                <i class="fa-regular fa-circle-play" aria-hidden="true"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service section -->
+    <section class="services-section" aria-label="Our Core Services">
+        <div class="container-fluid services-container">
+            <div class="row services-header align-items-end">
+                <div class="col-md-8">
+                    <h2 class="split-text mb-0">Our Core Services</h2>
+                </div>
+                <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                    <div class="carousel-nav d-inline-flex gap-3">
+                        <button class="nav-arrow-btn" id="prev-btn" aria-label="Previous service">
+                            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                        </button>
+                        <button class="nav-arrow-btn" id="next-btn" aria-label="Next service">
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row services-slider-container">
+                <div class="col-12 px-0">
+                    <div class="d-flex services-grid" id="services-slider">
+
+                        <a href="#" class="service-card" aria-label="Civil Site Superintendent Specialisation">
+                            <img src="images/Service-image-1.webp" alt="Civil Site Superintendent working on site">
+                            <div class="service-info">
+                                <div class="d-flex justify-content-between align-items-start text-black">
+                                    <h3>Civil Site Superintendent<br>Specialisation</h3>
+                                    <div class="arrow-link" aria-hidden="true">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                                <p>Our core niche. The hire that defines the job.</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="service-card active" aria-label="Retained Executive Search Services">
+                            <img src="images/Service-image-2.webp" alt="Corporate business executives meeting">
+                            <div class="service-info">
+                                <div class="d-flex justify-content-between align-items-start text-black">
+                                    <h3>Retained Executive Search</h3>
+                                    <div class="arrow-link" aria-hidden="true">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                                <p>Senior leadership and critical project<br>appointments in U.S. civil construction.
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="service-card" aria-label="Leadership Continuity & Succession Planning">
+                            <img src="images/Service-image-3.webp" alt="Succession planning advisory session">
+                            <div class="service-info">
+                                <div class="d-flex justify-content-between align-items-start text-black">
+                                    <h3>Leadership Continuity &<br>Succession</h3>
+                                    <div class="arrow-link" aria-hidden="true">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                                <p>Strategic advisory for GCs thinking beyond the<br>next hire.</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="service-card" aria-label="Executive Network & Advisory">
+                            <img src="images/Service-image-1.webp" alt="Executive Network Advisory">
+                            <div class="service-info">
+                                <div class="d-flex justify-content-between align-items-start text-black">
+                                    <h3>Executive Network &<br>Advisory</h3>
+                                    <div class="arrow-link" aria-hidden="true">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                                <p>Expanding strategic partnerships across the<br>U.S. civil construction sector.</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Snapshot section -->
+    <section class="snapshot-section" aria-label="Business Statistics Snapshot">
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col-lg-6 snapshot-left">
+                    <h2 class="split-text mb-4 mb-lg-0">A snapshot of our<br>business in the U.S.</h2>
+                </div>
+                <div class="col-lg-6 snapshot-right ps-lg-5">
+                    <div class="stat mb-5">
+                        <span class="stat-number d-block" data-val="550">0+</span>
+                        <span class="stat-text">Executive Hired</span>
+                    </div>
+                    <div class="stat mb-5">
+                        <span class="stat-number d-block" data-val="91">0%</span>
+                        <span class="stat-text">Retention of Civil Executive<br>throughout the project</span>
+                    </div>
+                    <div class="stat mb-5">
+                        <span class="stat-number d-block" data-val="6500">0</span>
+                        <span class="stat-text">Number of Civil Executive Network<br>in the U.S.</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number d-block" data-val="2022">0</span>
+                        <span class="stat-text">Serving the Industry</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- insights section -->
+    <section class="insights-section" aria-label="Civil Sector Industry Insights">
+        <div class="container-custom">
+            <div class="insights-header">
+                <div class="insights-title">
+                    <h2 class="split-text text-white">Civil Sector Insights</h2>
+                    <p>Current thinking on hiring and leadership in U.S. civil construction.</p>
+                </div>
+                <a href="#" class="btn-solid">More Insights</a>
+            </div>
+
+            <div class="insights-grid">
+                <a href="#" class="insight-card">
+                    <div class="insight-img" style="background-image: url('images/Civil-1.webp');"></div>
+                    <p>Why Construction graduates are choosing to be a Project Manager...</p>
+                    <span class="read-more">READ MORE</span>
+                </a>
+                <a href="#" class="insight-card">
+                    <div class="insight-img" style="background-image: url('images/Civil-2.webp');"></div>
+                    <p>Hiring x 2 Civil Project Managers - Sewer & Watermain - GTA ...</p>
+                    <span class="read-more">READ MORE</span>
+                </a>
+                <a href="#" class="insight-card">
+                    <div class="insight-img" style="background-image: url('images/Civil-3.webp');"></div>
+                    <p>Canadian vs US Civil Site Supers Salaries Compared: AKA Time to move...</p>
+                    <span class="read-more">READ MORE</span>
+                </a>
+                <a href="#" class="insight-card">
+                    <div class="insight-img" style="background-image: url('images/Civil-4.webp');"></div>
+                    <p>The Civil Superintendent pipeline is drying up. What's the solution?...</p>
+                    <span class="read-more">READ MORE</span>
+                </a>
+            </div>
+
+            <div class="follow-container">
+                <a href="#">Follow @bowenexecutive</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-spacer" aria-hidden="true"></section>
+
+    <div class="contact-banner-wrapper">
+        <div class="contact-banner">
+            <div class="banner-content">
+                <p class="banner-intro">Open to a confidential conversation about your next<br>move? Reach out
+                    directly. No pressure, no noise.</p>
+                <h2 class="split-text">Nick Prokop</h2>
+                <p class="banner-sub">Bowen Executive</p>
+                <div class="banner-contact-links">
+                    <a href="#" aria-label="Send email to Nick Prokop"><i class="fa-regular fa-envelope"
+                            aria-hidden="true"></i> Email</a>
+                    <a href="#" aria-label="Connect with Nick Prokop on LinkedIn"><i class="fa-brands fa-linkedin-in"
+                            aria-hidden="true"></i> Linkedin</a>
+                    <a href="#" aria-label="Call Nick Prokop"><i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        Phone</a>
+                </div>
+            </div>
+            <img src="images/Nick-Prokop-Image.webp" alt="Nick Prokop - Bowen Executive Recruiter" class="nick-img">
+        </div>
+    </div>
+
+    <div class="footer-content-wrapper">
+        <div class="footer-top">
+            <div class="footer-col brand-col">
+                <img src="images/Logo.svg" alt="Bowen Executive Logo" class="footer-logo">
+                <p>Bowen Executive recruits exclusively within U.S. civil<br>construction — senior leadership,
+                    retained executive<br>search, and the Civil Site Superintendents who run<br>the
+                    field.<br><br>One sector. One focus.</p>
+                <div class="social-links">
+                    <span>Follow Us</span>
+                    <a href="#" aria-label="Follow Bowen Executive on Facebook"><i class="fa-brands fa-facebook-f"
+                            aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Follow Bowen Executive on Instagram"><i class="fa-brands fa-instagram"
+                            aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Follow Bowen Executive on LinkedIn"><i class="fa-brands fa-linkedin-in"
+                            aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Contact Bowen Executive via WhatsApp"><i class="fa-brands fa-whatsapp"
+                            aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Follow Bowen Executive on YouTube"><i class="fa-brands fa-youtube"
+                            aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-wrapper">
+                <div class="footer-col links-col">
+                    <h4>Core Services</h4>
+                    <ul>
+                        <li><a href="#">Civil Site Superintendent Specialisation</a></li>
+                        <li><a href="#">Retained Executive Search</a></li>
+                        <li><a href="#">Leadership Continuity & Succession</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col links-col small-col">
+                    <h4>All</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Civil Insight</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026, Bowen Executive • Website by Comsci</p>
+        </div>
+    </div>
+    <div class="footer-overlay">
+        <img src="images/footer.webp" alt="Footer graphic overlay" class="nick-img-overlay">
+    </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="header.js" defer></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
