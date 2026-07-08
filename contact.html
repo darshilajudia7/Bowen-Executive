@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bowen Executive - Home Page</title>
-    <meta name="description"
-        content="Bowen Executive recruits senior leadership, retained executive search, and Civil Site Superintendents for U.S. civil construction. One sector. One focus.">
+    <title>Bowen Executive - Get in Touch</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="header_footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Preconnect to third-party origins to speed up the requests below -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +33,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    
 </head>
 
 <body class="loading">
@@ -54,7 +56,7 @@
             <li><a href="#">Services</a></li>
             <li><a href="#">Civil Insight</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="./contact.html" class="mobile-contact-btn">Contact</a></li>
+            <li><a href="#" class="mobile-contact-btn">Contact</a></li>
         </ul>
     </div>
 
@@ -181,229 +183,84 @@
         </div>
     </div>
 
-    <!-- HERO SECTION -->
     <section class="hero-section">
-        <div class="hero-slide active">
-            <div class="slide-bg" style="background-image: url('images/homepage.webp');"></div>
-            <div class="hero-content">
-                <div class="hero-text-left">
-                    <h1 class="split-text">Specialist retained executive search in U.S. civil construction.</h1>
-                </div>
-                <div class="hero-text-right">
-                    <p>Bowen Executive recruits exclusively within U.S. civil construction — senior leadership, retained
-                        executive search, and the Civil Site Superintendents who run the field. One sector. One focus.
-                    </p>
-                </div>
-            </div>
+        <div
+            class="hero-content-wrapper d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-4">
+            <h1 class="hero-title">Get in Touch</h1>
+            <p class="hero-subtitle text-md-start">There is no intake form, no automated response, and no account
+                manager. You will speak directly with Nick Prokop.</p>
         </div>
+    </section>
 
-        <div class="hero-slide">
-            <video class="slide-bg-video" loop muted playsinline>
-                <source src="images/homepage-3.webm" type="video/mp4">
-            </video>
-            <div class="hero-content">
-                <div class="hero-text-left">
-                    <h1>Building the future<br>of infrastructure.</h1>
-                </div>
-                <div class="hero-text-right">
-                    <p>Connecting top-tier talent with industry-leading projects across the United States. We know the
-                        people who move the earth.</p>
-                </div>
-            </div>
+    <section class="title-section">
+        <div class="title-content-wrapper">
+            <h2 class="section-title">Bowen Executive | Civil Construction Specialist Recruitment</h2>
         </div>
+    </section>
 
-        <div class="hero-slide">
-            <div class="slide-bg" style="background-image: url('images/homepage-2.webp');"></div>
-            <div class="hero-content">
-                <div class="hero-text-left">
-                    <h1>Leadership continuity<br>& succession.</h1>
-                </div>
-                <div class="hero-text-right">
-                    <p>Strategic advisory for General Contractors thinking beyond the next hire to secure their legacy.
-                    </p>
-                </div>
-            </div>
-        </div>
+    <section class="form-section">
+        <div class="form-content-wrapper">
+            <div class="row gx-5">
 
-        <div class="hero-bottom-controls" style="margin: 6px !important;">
-            <div class="pagination">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-            <div class="play-btn" role="button" tabindex="0">
-                <img src="icons/play.svg" alt="play_button" height="40px" width="40px">
+                <div class="col-lg-5 col-12">
+                    <div class="info-block">
+                        <h3 class="info-heading">Hiring in Civil Construction?</h3>
+                        <p class="info-text">Whether you are a GC with an active search or thinking about your long-term
+                            leadership structure — reach out directly.</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3 class="info-heading">Working in Civil Construction?</h3>
+                        <p class="info-text">If you are a Civil Site Superintendent or senior construction professional
+                            open to a confidential conversation about your next move — get in touch.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 col-12 d-flex justify-content-lg-end mt-5 mt-lg-0">
+                    <div class="form-wrapper w-100">
+                        <form>
+                            <div class="row mb-3 gx-3">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label class="custom-label">Full Name*</label>
+                                    <input type="text" class="form-control custom-input" placeholder="e.x. Nick Prokop"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="custom-label">Your Company*</label>
+                                    <input type="text" class="form-control custom-input" placeholder="e.x. Google"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4 gx-3">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label class="custom-label">Email*</label>
+                                    <input type="email" class="form-control custom-input" placeholder="name@example.com"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="custom-label">Phone Number</label>
+                                    <input type="tel" class="form-control custom-input"
+                                        placeholder="e.x. +1 123 9876 5432">
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="custom-label">Message*</label>
+                                <textarea class="form-control custom-textarea" placeholder="Share your thoughts..."
+                                    required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn custom-btn">Contact</button>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section class="services-section" aria-label="Our Core Services">
-        <div class="services-container">
-            <div class="services-header">
-                <h2 class="split-text">Our Core Services</h2>
-                <div class="carousel-nav">
-                    <button class="nav-arrow-btn" id="prev-btn" aria-label="Previous service">
-                        <img src="icons/arrow.svg" alt="Left Arrow Icon" height="24" width="24"
-                            style="transform: rotate(180deg);">
-                    </button>
-                    <button class="nav-arrow-btn" id="next-btn" aria-label="Next service">
-                        <img src="icons/arrow.svg" alt="Right Arrow Icon" height="24" width="24">
-                    </button>
-                </div>
-            </div>
-
-            <div class="services-slider-container">
-                <div class="services-grid" id="services-slider">
-
-                    <!-- CARD 1 -->
-                    <a href="./civil_Site_Superintendent_Specialisation.html" class="service-card" aria-label="Civil Site Superintendent Specialisation">
-                        <img src="images/Service-image-1.webp" alt="Civil Site Superintendent working on site">
-                        <div class="service-info">
-                            <div class="info-header">
-                                <h3>Civil Site Superintendent<br>Specialisation</h3>
-                                <div class="arrow-link" aria-hidden="true">
-                                    <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none"
-                                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round" style="display:inline-block;vertical-align:-0.125em">
-                                        <line x1="4" y1="12" x2="20" y2="12" />
-                                        <polyline points="13 5 20 12 13 19" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <p>Our core niche. The hire that defines the job.</p>
-                        </div>
-                    </a>
-
-                    <!-- CARD 2 (Active by default) -->
-                    <a href="#" class="service-card active" aria-label="Retained Executive Search Services">
-                        <img src="images/Service-image-2.webp" alt="Corporate business executives meeting">
-                        <div class="service-info">
-                            <div class="info-header">
-                                <h3>Retained Executive Search</h3>
-                                <div class="arrow-link" aria-hidden="true">
-                                    <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none"
-                                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round" style="display:inline-block;vertical-align:-0.125em">
-                                        <line x1="4" y1="12" x2="20" y2="12" />
-                                        <polyline points="13 5 20 12 13 19" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <p>Senior leadership and critical project<br>appointments in U.S. civil construction.</p>
-                        </div>
-                    </a>
-
-                    <!-- CARD 3 -->
-                    <a href="#" class="service-card" aria-label="Leadership Continuity & Succession Planning">
-                        <img src="images/Service-image-3.webp" alt="Succession planning advisory session">
-                        <div class="service-info">
-                            <div class="info-header">
-                                <h3>Leadership Continuity &<br>Succession</h3>
-                                <div class="arrow-link" aria-hidden="true">
-                                    <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none"
-                                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round" style="display:inline-block;vertical-align:-0.125em">
-                                        <line x1="4" y1="12" x2="20" y2="12" />
-                                        <polyline points="13 5 20 12 13 19" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <p>Strategic advisory for GCs thinking beyond the<br>next hire.</p>
-                        </div>
-                    </a>
-
-                    <!-- CARD 4 -->
-                    <a href="#" class="service-card" aria-label="Executive Network & Advisory">
-                        <img src="images/Service-image-1.webp" alt="Executive Network Advisory">
-                        <div class="service-info">
-                            <div class="info-header">
-                                <h3>Executive Network &<br>Advisory</h3>
-                                <div class="arrow-link" aria-hidden="true">
-                                    <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none"
-                                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round" style="display:inline-block;vertical-align:-0.125em">
-                                        <line x1="4" y1="12" x2="20" y2="12" />
-                                        <polyline points="13 5 20 12 13 19" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <p>Expanding strategic partnerships across the<br>U.S. civil construction sector.</p>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="snapshot-section" aria-label="Business Statistics Snapshot">
-        <div class="snapshot-container">
-            <div class="snapshot-left">
-                <h2 class="split-text">A snapshot of our business in the U.S.</h2>
-            </div>
-            <div class="snapshot-right">
-                <div class="stat">
-                    <span class="stat-number" data-val="550">550+</span>
-                    <span class="stat-text">Executive Hired</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" data-val="91">91%</span>
-                    <span class="stat-text">Retention of Civil Executive<br>throughout the project</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" data-val="6500">6,500</span>
-                    <span class="stat-text">Number of Civil Executive Network<br>in the U.S.</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" data-val="2022">2022</span>
-                    <span class="stat-text">Serving the Industry</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INSIGHTS SECTION -->
-    <section class="insights-section" aria-label="Civil Sector Industry Insights">
-        <div class="container-custom">
-            <div class="insights-header">
-                <div class="insights-title">
-                    <h2 class="split-text" style="color: white !important;">Civil Sector Insights</h2>
-                    <p>Current thinking on hiring and leadership in U.S. civil construction.</p>
-                </div>
-                <a href="#" class="btn-solid">More Insights</a>
-            </div>
-
-            <div class="insights-grid">
-                <a href="#" class="insight-card">
-                    <div class="insight-img" style="background-image: url('images/Civil-1.webp');"></div>
-                    <p>Why Construction graduates are choosing to be a Project Manager...</p>
-                    <span class="read-more">READ MORE</span>
-                </a>
-                <a href="#" class="insight-card">
-                    <div class="insight-img" style="background-image: url('images/Civil-2.webp');"></div>
-                    <p>Hiring x 2 Civil Project Managers - Sewer & Watermain - GTA ...</p>
-                    <span class="read-more">READ MORE</span>
-                </a>
-                <a href="#" class="insight-card">
-                    <div class="insight-img" style="background-image: url('images/Civil-3.webp');"></div>
-                    <p>Canadian vs US Civil Site Supers Salaries Compared: AKA Time to move...</p>
-                    <span class="read-more">READ MORE</span>
-                </a>
-                <a href="#" class="insight-card">
-                    <div class="insight-img" style="background-image: url('images/Civil-4.webp');"></div>
-                    <p>The Civil Superintendent pipeline is drying up. What's the solution?...</p>
-                    <span class="read-more">READ MORE</span>
-                </a>
-            </div>
-
-            <div class="follow-container">
-                <a href="#">Follow @bowenexecutive</a>
-            </div>
-        </div>
-    </section>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- FOOTER -->
     <section class="cta-spacer" aria-hidden="true"></section>
 
@@ -502,7 +359,7 @@
     </footer>
 
     <script src="header_footer.js" defer></script>
-    <script src="script.js" defer></script>
+    <!-- <script src="script.js" defer></script> -->
 </body>
 
 </html>

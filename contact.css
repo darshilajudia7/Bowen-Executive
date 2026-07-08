@@ -1,0 +1,207 @@
+/* Base typography fallbacks */
+:root {
+  --font-sharp: "Sharp Sans", "Inter", -apple-system, sans-serif;
+  --font-author: "Author", "Inter", -apple-system, sans-serif;
+  --color-yellow: #ffca00;
+  --color-black: #000000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-black);
+  overflow-x: hidden;
+}
+
+/* --- 1. Hero Section (Frame 600px height) --- */
+.hero-section {
+  width: 100%;
+  height: 600px;
+  /* Replace the URL with your exact construction image path */
+  background: url("./images/homepage.webp") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 60px;
+}
+
+.hero-content-wrapper {
+  padding: 0px;
+  width: 100%;
+}
+
+.hero-title {
+  font-family: var(--font-sharp);
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 64px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-family: var(--font-sharp);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  max-width: 437px;
+  margin: 0;
+}
+
+/* --- 2. Title Section (White Banner, 323px height) --- */
+.title-section {
+  width: 100%;
+  height: 323px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.title-content-wrapper {
+  padding-left: 80px;
+  padding-right: 80px;
+  width: 100%;
+}
+
+.section-title {
+  font-family: var(--font-sharp);
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 64px;
+  color: var(--color-black);
+  max-width: 1352px;
+  margin: 0;
+}
+
+/* --- 3. Form Section (Black Background, 642px height) --- */
+.form-section {
+  width: 100%;
+  background: var(--color-black);
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.form-content-wrapper {
+  padding-left: 85px;
+  padding-right: 85px;
+}
+
+/* Left Column (Info) */
+.info-block {
+  margin-bottom: 64px;
+  max-width: 551px;
+}
+
+.info-heading {
+  font-family: var(--font-sharp);
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 34px;
+  color: var(--color-yellow);
+  margin-bottom: 16px;
+}
+
+.info-text {
+  font-family: var(--font-sharp);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Right Column (Form) */
+.form-wrapper {
+  max-width: 666px;
+}
+
+.custom-label {
+  font-family: var(--font-author);
+  font-weight: 500;
+  /* Approx 494 */
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.custom-input,
+.custom-textarea {
+  background: #ffffff;
+  border: 1px solid #f6f6f6;
+  border-radius: 8px;
+  font-family: var(--font-author);
+  font-weight: 500;
+  font-size: 20px;
+  color: #000;
+  /* Active text color */
+}
+
+.custom-input::placeholder,
+.custom-textarea::placeholder {
+  color: #9a9a9a;
+}
+
+.custom-input {
+  height: 54px;
+  padding-left: 14px;
+}
+
+.custom-textarea {
+  height: 140px;
+  padding-left: 14px;
+  padding-top: 12px;
+  resize: none;
+}
+
+.custom-btn {
+  background: var(--color-yellow);
+  border-radius: 44px;
+  width: 122px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+
+  /* Text */
+  font-family: var(--font-sharp);
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.custom-btn:hover {
+  opacity: 0.9;
+  color: #ffffff;
+}
+
+/* Responsive overrides for smaller screens */
+@media (max-width: 991px) {
+  .hero-content-wrapper {
+    padding: 0px;
+  }
+
+  .title-content-wrapper,
+  .form-content-wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .section-title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .title-section {
+    height: auto;
+    padding: 60px 0;
+  }
+}
