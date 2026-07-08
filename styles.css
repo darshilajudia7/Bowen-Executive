@@ -372,20 +372,12 @@ h3 {
   justify-content: center;
   align-items: center;
   color: #000000;
-  transition:
-    transform 0.3s ease,
-    background-color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .service-card:hover .arrow-link,
 .service-card.active .arrow-link {
-  background: #000000;
   transform: scale(1.1) rotate(-45deg);
-}
-
-.service-card:hover .arrow-link i,
-.service-card.active .arrow-link i {
-  color: #ffca00;
 }
 
 /* Snapshot section */
@@ -564,20 +556,21 @@ h3 {
 }
 
 .follow-container a {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
   color: transparent;
-  background: linear-gradient(to right, var(--primary) 50%, #fff 50%);
+  background: linear-gradient(to right, #ffffff 50%, #ffeb3b 50%);
   background-size: 200% 100%;
   background-position: 100% 0;
   -webkit-background-clip: text;
   background-clip: text;
-  transition: background-position 0.4s ease;
-  display: flex;
-  justify-content: center;
+  transition: background-position 0.4s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .follow-container a:hover {
   background-position: 0 0;
+  transform: translateY(-3px) scale(1.05);
 }
 
 /* MEDIA QUERIES */
