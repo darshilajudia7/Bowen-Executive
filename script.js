@@ -6,14 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!reduceMotionQuery.matches && typeof Lenis !== 'undefined') {
         lenis = new Lenis({
-            duration: 1.5,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            duration: 0.35,
+            easing: (t) => 1 - Math.pow(1 - t, 3),
             direction: 'vertical',
             gestureDirection: 'vertical',
             smooth: true,
             smoothWheel: true,
-            touchMultiplier: 1.2,
-            wheelMultiplier: 1,
+            syncTouch: true,
+            touchMultiplier: 1.5,
+            wheelMultiplier: 1.1,
             infinite: false,
         });
 

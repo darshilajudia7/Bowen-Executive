@@ -67,14 +67,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dropdownTrigger && dropdownOverlay) {
         dropdownTrigger.addEventListener('click', (event) => {
             event.preventDefault();
-            dropdownOverlay.classList.add('open');
-            document.body.style.overflow = 'hidden';
-            dropdownTrigger.classList.add('active');
+            if (dropdownOverlay.classList.contains('open')) {
+                closeDropdown();
+            } else {
+                dropdownOverlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                dropdownTrigger.classList.add('active');
+            }
         });
     }
 
     if (dropdownClose && dropdownOverlay) {
         dropdownClose.addEventListener('click', closeDropdown);
+    }
+
+    const innerServicesLink = document.querySelector('.inner-dropdown-close');
+    if (innerServicesLink) {
+        innerServicesLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            closeDropdown();
+        });
     }
 
     if (dropdownOverlay) {
@@ -90,6 +102,37 @@ document.addEventListener('DOMContentLoaded', () => {
             closeDropdown();
         }
     });
+
+    // Dropdown Mega-Menu Carousel Slider
+    const ddCards = document.querySelector('.dropdown-cards');
+    const ddArrowLeft = document.querySelector('.dd-arrow-btn[aria-label="Previous"]');
+    const ddArrowRight = document.querySelector('.dd-arrow-btn[aria-label="Next"]');
+
+    if (ddCards && ddArrowLeft && ddArrowRight) {
+        ddArrowRight.addEventListener('click', () => {
+            const cardElement = ddCards.querySelector('.dd-card');
+            if (cardElement) {
+                const cardWidth = cardElement.offsetWidth + 27;
+                if (window.gsap) {
+                    gsap.to(ddCards, { scrollLeft: ddCards.scrollLeft + cardWidth, duration: 0.6, ease: "power2.out" });
+                } else {
+                    ddCards.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                }
+            }
+        });
+
+        ddArrowLeft.addEventListener('click', () => {
+            const cardElement = ddCards.querySelector('.dd-card');
+            if (cardElement) {
+                const cardWidth = cardElement.offsetWidth + 27;
+                if (window.gsap) {
+                    gsap.to(ddCards, { scrollLeft: ddCards.scrollLeft - cardWidth, duration: 0.6, ease: "power2.out" });
+                } else {
+                    ddCards.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                }
+            }
+        });
+    }
 
     // PRELOADER TIMELINE
     if (window.gsap && document.querySelector('.loader-logo')) {

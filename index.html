@@ -8,17 +8,25 @@
     <meta name="description"
         content="Bowen Executive recruits senior leadership, retained executive search, and Civil Site Superintendents for U.S. civil construction. One sector. One focus.">
 
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Preconnect to third-party origins to speed up the requests below -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-    <!-- Custom CSS -->
+    <!-- Custom CSS (kept render-blocking on purpose: page layout depends on it, avoids flash of unstyled content) -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="header_footer.css">
 
+    <!-- Google Fonts: loaded async (non-critical for first paint), falls back safely if JS is off -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+    </noscript>
 
     <!-- GSAP & Lenis Smooth Scroll -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
@@ -35,11 +43,17 @@
 
     <div class="mobile-nav-overlay" aria-hidden="true" role="navigation">
         <div class="mobile-nav-close" aria-label="Close menu" role="button" tabindex="0">
-            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor"
+                stroke-width="3" stroke-linecap="round" style="display:inline-block;vertical-align:-0.125em">
+                <line x1="4" y1="4" x2="20" y2="20" />
+                <line x1="20" y1="4" x2="4" y2="20" />
+            </svg>
         </div>
         <ul class="mobile-nav-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="#">Services
+                    <img src="icons/drop-down.svg" alt="Dropdown Arrow" class="dropdown-arrow" height="18" width="18">
+                </a></li>
             <li><a href="#">Civil Insight</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#" class="mobile-contact-btn">Contact</a></li>
@@ -66,7 +80,12 @@
                 <a href="contact.html" class="btn-outline">Contact</a>
             </div>
             <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
-                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor"
+                    stroke-width="2.5" stroke-linecap="round" style="display:inline-block;vertical-align:-0.125em">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
             </div>
         </nav>
     </header>
@@ -74,10 +93,23 @@
     <!-- Services Mega-Menu Dropdown Overlay -->
     <div class="services-dropdown-overlay" aria-hidden="true" role="dialog" aria-label="Services Menu">
         <div class="dropdown-inner">
-            <button class="dropdown-close" aria-label="Close services menu">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="dropdown-header"></div>
+            <nav class="dropdown-navbar" aria-label="Dropdown Navigation">
+                <div class="logo">
+                    <img src="images/Logo.svg" alt="Bowen Executive Logo" class="dropdown-logo-img"
+                        style="filter: invert(1);">
+                </div>
+                <ul class="dropdown-nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="inner-dropdown-close">Services <img src="icons/drop-down.svg"
+                                alt="Dropdown Arrow" height="24" width="24"
+                                style="filter: invert(1); transform: rotate(180deg);"></a></li>
+                    <li><a href="#">Civil Insight</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+                <div class="dropdown-nav-contact">
+                    <a href="contact.html" class="btn-solid-dark">Contact</a>
+                </div>
+            </nav>
             <div class="dropdown-cards">
                 <a href="#" class="dd-card" aria-label="Civil Site Superintendent Specialisation">
                     <div class="dd-card-img">
@@ -87,7 +119,7 @@
                         <div class="dd-card-top">
                             <h3>Civil Site Superintendent<br>Specialisation</h3>
                             <div class="dd-arrow">
-                                <i class="fa-solid fa-arrow-right"></i>
+                                <img src="icons/arrow.svg" alt="arrow" height="24" width="24">
                             </div>
                         </div>
                         <p>Our core niche. The hire that defines the job.</p>
@@ -102,7 +134,7 @@
                         <div class="dd-card-top">
                             <h3>Retained Executive Search</h3>
                             <div class="dd-arrow">
-                                <i class="fa-solid fa-arrow-right"></i>
+                                <img src="icons/arrow.svg" alt="arrow" height="24" width="24">
                             </div>
                         </div>
                         <p>Senior leadership and critical project appointments in U.S. civil construction.</p>
@@ -117,12 +149,36 @@
                         <div class="dd-card-top">
                             <h3>Leadership Continuity &amp;<br>Succession</h3>
                             <div class="dd-arrow">
-                                <i class="fa-solid fa-arrow-right"></i>
+                                <img src="icons/arrow.svg" alt="arrow" height="24" width="24">
                             </div>
                         </div>
                         <p>Strategic advisory for GCs thinking beyond the next hire.</p>
                     </div>
                 </a>
+
+                <a href="#" class="dd-card" aria-label="Leadership Continuity &amp; Succession">
+                    <div class="dd-card-img">
+                        <img src="images/Service-image-1.webp" alt="Leadership continuity advisory session">
+                    </div>
+                    <div class="dd-card-body">
+                        <div class="dd-card-top">
+                            <h3>Leadership Continuity &amp;<br>Succession</h3>
+                            <div class="dd-arrow">
+                                <img src="icons/arrow.svg" alt="arrow" height="24" width="24">
+                            </div>
+                        </div>
+                        <p>Strategic advisory for GCs thinking beyond the next hire.</p>
+                    </div>
+                </a>
+
+            </div>
+            <div class="dropdown-carousel-arrows">
+                <button class="dd-arrow-btn" aria-label="Previous">
+                    <img src="icons/arrow.svg" alt="arrow" height="24" width="24" style="transform: rotate(180deg);">
+                </button>
+                <button class="dd-arrow-btn" aria-label="Next">
+                    <img src="icons/arrow.svg" alt="arrow" height="24" width="24">
+                </button>
             </div>
         </div>
     </div>
@@ -171,7 +227,7 @@
             </div>
         </div>
 
-        <div class="hero-bottom-controls">
+        <div class="hero-bottom-controls" style="margin: 6px !important;">
             <div class="pagination">
                 <span class="dot active"></span>
                 <span class="dot"></span>
@@ -185,109 +241,126 @@
 
     <!-- SERVICES SECTION -->
     <section class="services-section" aria-label="Our Core Services">
-        <div class="container-fluid services-container">
-            <div class="row services-header align-items-end">
-                <div class="col-md-8">
-                    <h2 class="split-text mb-0">Our Core Services</h2>
-                </div>
-                <div class="col-md-4 text-md-end mt-4 mt-md-0">
-                    <div class="carousel-nav d-inline-flex gap-3">
-                        <button class="nav-arrow-btn" id="prev-btn" aria-label="Previous service">
-                            <img src="icons/arrow.svg" alt="Left Arrow Icon" height="24" width="24"
-                                style="transform: rotate(180deg);">
-                        </button>
-                        <button class="nav-arrow-btn" id="next-btn" aria-label="Next service">
-                            <img src="icons/arrow.svg" alt="Right Arrow Icon" height="24" width="24">
-                        </button>
-                    </div>
+        <div class="services-container">
+            <div class="services-header">
+                <h2 class="split-text">Our Core Services</h2>
+                <div class="carousel-nav">
+                    <button class="nav-arrow-btn" id="prev-btn" aria-label="Previous service">
+                        <img src="icons/arrow.svg" alt="Left Arrow Icon" height="24" width="24"
+                            style="transform: rotate(180deg);">
+                    </button>
+                    <button class="nav-arrow-btn" id="next-btn" aria-label="Next service">
+                        <img src="icons/arrow.svg" alt="Right Arrow Icon" height="24" width="24">
+                    </button>
                 </div>
             </div>
 
-            <div class="row services-slider-container">
-                <div class="col-12 px-0">
-                    <div class="d-flex services-grid" id="services-slider">
-                        <a href="#" class="service-card" aria-label="Civil Site Superintendent Specialisation">
-                            <img src="images/Service-image-1.webp" alt="Civil Site Superintendent working on site">
-                            <div class="service-info">
-                                <div class="d-flex justify-content-between align-items-start text-black">
-                                    <h3>Civil Site Superintendent<br>Specialisation</h3>
-                                    <div class="arrow-link" aria-hidden="true">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </div>
-                                </div>
-                                <p>Our core niche. The hire that defines the job.</p>
-                            </div>
-                        </a>
+            <div class="services-slider-container">
+                <div class="services-grid" id="services-slider">
 
-                        <a href="#" class="service-card active" aria-label="Retained Executive Search Services">
-                            <img src="images/Service-image-2.webp" alt="Corporate business executives meeting">
-                            <div class="service-info">
-                                <div class="d-flex justify-content-between align-items-start text-black">
-                                    <h3>Retained Executive Search</h3>
-                                    <div class="arrow-link" aria-hidden="true">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </div>
+                    <!-- CARD 1 -->
+                    <a href="#" class="service-card" aria-label="Civil Site Superintendent Specialisation">
+                        <img src="images/Service-image-1.webp" alt="Civil Site Superintendent working on site">
+                        <div class="service-info">
+                            <div class="info-header">
+                                <h3>Civil Site Superintendent<br>Specialisation</h3>
+                                <div class="arrow-link" aria-hidden="true">
+                                    <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none"
+                                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round" style="display:inline-block;vertical-align:-0.125em">
+                                        <line x1="4" y1="12" x2="20" y2="12" />
+                                        <polyline points="13 5 20 12 13 19" />
+                                    </svg>
                                 </div>
-                                <p>Senior leadership and critical project<br>appointments in U.S. civil construction.
-                                </p>
                             </div>
-                        </a>
+                            <p>Our core niche. The hire that defines the job.</p>
+                        </div>
+                    </a>
 
-                        <a href="#" class="service-card" aria-label="Leadership Continuity & Succession Planning">
-                            <img src="images/Service-image-3.webp" alt="Succession planning advisory session">
-                            <div class="service-info">
-                                <div class="d-flex justify-content-between align-items-start text-black">
-                                    <h3>Leadership Continuity &<br>Succession</h3>
-                                    <div class="arrow-link" aria-hidden="true">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </div>
+                    <!-- CARD 2 (Active by default) -->
+                    <a href="#" class="service-card active" aria-label="Retained Executive Search Services">
+                        <img src="images/Service-image-2.webp" alt="Corporate business executives meeting">
+                        <div class="service-info">
+                            <div class="info-header">
+                                <h3>Retained Executive Search</h3>
+                                <div class="arrow-link" aria-hidden="true">
+                                    <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none"
+                                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round" style="display:inline-block;vertical-align:-0.125em">
+                                        <line x1="4" y1="12" x2="20" y2="12" />
+                                        <polyline points="13 5 20 12 13 19" />
+                                    </svg>
                                 </div>
-                                <p>Strategic advisory for GCs thinking beyond the<br>next hire.</p>
                             </div>
-                        </a>
+                            <p>Senior leadership and critical project<br>appointments in U.S. civil construction.</p>
+                        </div>
+                    </a>
 
-                        <a href="#" class="service-card" aria-label="Executive Network & Advisory">
-                            <img src="images/Service-image-1.webp" alt="Executive Network Advisory">
-                            <div class="service-info">
-                                <div class="d-flex justify-content-between align-items-start text-black">
-                                    <h3>Executive Network &<br>Advisory</h3>
-                                    <div class="arrow-link" aria-hidden="true">
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </div>
+                    <!-- CARD 3 -->
+                    <a href="#" class="service-card" aria-label="Leadership Continuity & Succession Planning">
+                        <img src="images/Service-image-3.webp" alt="Succession planning advisory session">
+                        <div class="service-info">
+                            <div class="info-header">
+                                <h3>Leadership Continuity &<br>Succession</h3>
+                                <div class="arrow-link" aria-hidden="true">
+                                    <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none"
+                                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round" style="display:inline-block;vertical-align:-0.125em">
+                                        <line x1="4" y1="12" x2="20" y2="12" />
+                                        <polyline points="13 5 20 12 13 19" />
+                                    </svg>
                                 </div>
-                                <p>Expanding strategic partnerships across the<br>U.S. civil construction sector.</p>
                             </div>
-                        </a>
-                    </div>
+                            <p>Strategic advisory for GCs thinking beyond the<br>next hire.</p>
+                        </div>
+                    </a>
+
+                    <!-- CARD 4 -->
+                    <a href="#" class="service-card" aria-label="Executive Network & Advisory">
+                        <img src="images/Service-image-1.webp" alt="Executive Network Advisory">
+                        <div class="service-info">
+                            <div class="info-header">
+                                <h3>Executive Network &<br>Advisory</h3>
+                                <div class="arrow-link" aria-hidden="true">
+                                    <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none"
+                                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round" style="display:inline-block;vertical-align:-0.125em">
+                                        <line x1="4" y1="12" x2="20" y2="12" />
+                                        <polyline points="13 5 20 12 13 19" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <p>Expanding strategic partnerships across the<br>U.S. civil construction sector.</p>
+                        </div>
+                    </a>
+
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- SNAPSHOT SECTION -->
     <section class="snapshot-section" aria-label="Business Statistics Snapshot">
-        <div class="container">
-            <div class="row align-items-start">
-                <div class="col-lg-6 snapshot-left">
-                    <h2 class="split-text mb-4 mb-lg-0">A snapshot of our<br>business in the U.S.</h2>
+        <div class="snapshot-container">
+            <div class="snapshot-left">
+                <h2 class="split-text">A snapshot of our<br>business in the U.S.</h2>
+            </div>
+            <div class="snapshot-right">
+                <div class="stat">
+                    <span class="stat-number" data-val="550">550+</span>
+                    <span class="stat-text">Executive Hired</span>
                 </div>
-                <div class="col-lg-6 snapshot-right ps-lg-5">
-                    <div class="stat mb-5">
-                        <span class="stat-number d-block" data-val="550">0+</span>
-                        <span class="stat-text">Executive Hired</span>
-                    </div>
-                    <div class="stat mb-5">
-                        <span class="stat-number d-block" data-val="91">0%</span>
-                        <span class="stat-text">Retention of Civil Executive<br>throughout the project</span>
-                    </div>
-                    <div class="stat mb-5">
-                        <span class="stat-number d-block" data-val="6500">0</span>
-                        <span class="stat-text">Number of Civil Executive Network<br>in the U.S.</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number d-block" data-val="2022">0</span>
-                        <span class="stat-text">Serving the Industry</span>
-                    </div>
+                <div class="stat">
+                    <span class="stat-number" data-val="91">91%</span>
+                    <span class="stat-text">Retention of Civil Executive<br>throughout the project</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-val="6500">6,500</span>
+                    <span class="stat-text">Number of Civil Executive Network<br>in the U.S.</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-val="2022">2022</span>
+                    <span class="stat-text">Serving the Industry</span>
                 </div>
             </div>
         </div>
@@ -298,7 +371,7 @@
         <div class="container-custom">
             <div class="insights-header">
                 <div class="insights-title">
-                    <h2 class="split-text text-white">Civil Sector Insights</h2>
+                    <h2 class="split-text" style="color: white !important;">Civil Sector Insights</h2>
                     <p>Current thinking on hiring and leadership in U.S. civil construction.</p>
                 </div>
                 <a href="#" class="btn-solid">More Insights</a>
@@ -342,7 +415,7 @@
                 <div class="banner-content">
                     <p class="banner-intro">Open to a confidential conversation about your next<br>move? Reach out
                         directly. No pressure, no noise.</p>
-                    <h2 class="split-text">Nick Prokop</h2>
+                    <h2>Nick Prokop</h2>
                     <p class="banner-sub">Bowen Executive</p>
                     <div class="banner-contact-links">
                         <a href="#" aria-label="Send email to Nick Prokop">
@@ -427,9 +500,8 @@
 
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="header_footer.js" defer></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
