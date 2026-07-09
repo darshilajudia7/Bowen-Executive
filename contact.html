@@ -5,21 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bowen Executive - Get in Touch</title>
-    <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="header_footer.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Preconnect to third-party origins to speed up the requests below -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-    <!-- Custom CSS (kept render-blocking on purpose: page layout depends on it, avoids flash of unstyled content) -->
-    <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="contact.css">
 
-    <!-- Google Fonts: loaded async (non-critical for first paint), falls back safely if JS is off -->
     <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
@@ -29,16 +25,13 @@
             rel="stylesheet">
     </noscript>
 
-    <!-- GSAP & Lenis Smooth Scroll -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js" defer></script>
 </head>
 
 <body class="loading">
 
-    <!-- HEADER -->
     <div class="preloader">
         <img src="images/Logo.svg" alt="Logo Loader" class="loader-logo">
     </div>
@@ -66,7 +59,7 @@
                 <img src="images/Logo.svg" alt="Bowen Executive Logo">
             </div>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
+                <li><a href="./index.html">Home</a></li>
                 <li class="dropdown">
                     <a href="#">Services
                         <img src="icons/drop-down.svg" alt="Dropdown Arrow" class="dropdown-arrow" height="24"
@@ -99,8 +92,8 @@
                     </h1>
                 </div>
 
-                <div class="col-lg-4 hero-anim ms-lg-auto">
-                    <p class="hero-subtitle text-white m-0 text-lg-start text-start">
+                <div class="col-lg-4 hero-anim ms-lg-auto mt-4 mt-lg-0">
+                    <p class="hero-subtitle text-white m-0 text-start">
                         There is no intake form, no automated response, and no account manager. You will speak directly
                         with Nick Prokop.
                     </p>
@@ -123,12 +116,14 @@
                 <div class="col-lg-5 mb-5 mb-lg-0 info-anim">
                     <div class="mb-5">
                         <h3 class="text-warning fw-semibold mb-3">Hiring in Civil Construction?</h3>
-                        <p class="fw-medium">Whether you are a GC with an active search or thinking about your long-term
+                        <p class="fw-medium text-white">Whether you are a GC with an active search or thinking about
+                            your long-term
                             leadership structure — reach out directly.</p>
                     </div>
                     <div>
                         <h3 class="text-warning fw-semibold mb-3">Working in Civil Construction?</h3>
-                        <p class="fw-medium">If you are a Civil Site Superintendent or senior construction professional
+                        <p class="fw-medium text-white">If you are a Civil Site Superintendent or senior construction
+                            professional
                             open to a confidential conversation about your next move — get in touch.</p>
                     </div>
                 </div>
@@ -173,10 +168,6 @@
         </div>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-    <!-- FOOTER -->
     <section class="cta-spacer" aria-hidden="true"></section>
 
     <footer class="site-footer" aria-label="Site Footer">
@@ -267,49 +258,82 @@
             <div class="footer-overlay">
                 <img src="images/footer.webp" alt="Footer graphic overlay" class="nick-img-overlay">
             </div>
-
         </div>
-
-
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="header_footer.js" defer></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-            gsap.registerPlugin(ScrollTrigger);
+        document.addEventListener("DOMContentLoaded", () => {
+            // Register plugin safely
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
 
-            // 1. Parallax Background
-            gsap.to(".hero-section", {
-                backgroundPosition: "50% 100%",
-                ease: "none",
-                scrollTrigger: { trigger: ".hero-section", start: "top top", end: "bottom top", scrub: true }
-            });
+                // 1. Parallax Background
+                gsap.to(".hero-section", {
+                    backgroundPosition: "50% 100%",
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: ".hero-section",
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
 
-            // 2. 3D Text Reveal
-            gsap.from(".hero-title, .hero-subtitle", {
-                y: 80, opacity: 0, rotationX: -45, transformOrigin: "0% 50% -50", duration: 1.5, stagger: 0.2, ease: "power4.out", delay: 0.2
-            });
+                // 2. 3D Text Reveal (Smoother easing, slightly shorter travel)
+                gsap.from(".hero-anim h1, .hero-anim p", {
+                    y: 60,
+                    opacity: 0,
+                    rotationX: -25,
+                    transformOrigin: "0% 50% -50",
+                    duration: 1.2,
+                    stagger: 0.2,
+                    ease: "power3.out",
+                    delay: 0.1
+                });
 
-            // 3. Title Scrub Reveal
-            gsap.from(".title-section h2", {
-                scrollTrigger: { trigger: ".title-section", start: "top 85%", end: "top 40%", scrub: 1 },
-                y: 40, opacity: 0, scale: 0.95, transformOrigin: "left center"
-            });
+                // 3. Title Scrub Reveal
+                gsap.from(".title-section h2", {
+                    scrollTrigger: {
+                        trigger: ".title-section",
+                        start: "top 90%",
+                        end: "top 50%",
+                        scrub: 1
+                    },
+                    y: 30,
+                    opacity: 0,
+                    scale: 0.98,
+                    transformOrigin: "left center"
+                });
 
-            // 4. Form Info Column Entrance
-            gsap.from(".form-section .info-anim > div", {
-                scrollTrigger: { trigger: ".form-section", start: "top 75%" },
-                x: -50, opacity: 0, duration: 1.2, stagger: 0.3, ease: "power3.out"
-            });
+                // 4. Form Info Column Entrance
+                gsap.from(".form-section .info-anim > div", {
+                    scrollTrigger: {
+                        trigger: ".form-section",
+                        start: "top 75%"
+                    },
+                    x: -40,
+                    opacity: 0,
+                    duration: 1,
+                    stagger: 0.2,
+                    ease: "power3.out"
+                });
 
-            // 5. Form Inputs Entrance
-            gsap.from(".custom-form .row, .custom-form .mb-4, .custom-form .text-end", {
-                scrollTrigger: { trigger: ".custom-form", start: "top 80%" },
-                y: 40, opacity: 0, duration: 1, stagger: 0.15, ease: "back.out(1.2)"
-            });
+                // 5. Form Inputs Entrance
+                gsap.from(".custom-form .row, .custom-form .mb-4, .custom-form .text-end", {
+                    scrollTrigger: {
+                        trigger: ".custom-form",
+                        start: "top 80%"
+                    },
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: "back.out(1.2)"
+                });
+            }
         });
     </script>
 </body>

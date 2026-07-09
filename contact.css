@@ -1,3 +1,44 @@
+/* TYPOGRAPHY & VARIABLES */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("font/Sharp Sans Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("font/Sharp Sans.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("font/Sharp Sans Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("font/Sharp Sans Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("font/SharpSansBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Custom Typography Variables */
 :root {
   --font-sharp: "Sharp Sans", sans-serif;
@@ -8,14 +49,17 @@ body {
   font-family: var(--font-sharp);
 }
 
-/* --- Hero Section --- */
-/* --- Hero Section --- */
+/* Perfect Grid Alignment with Header */
+.content-container {
+  width: calc(100% - 8rem);
+  max-width: 1352px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
 .hero-section {
   height: 600px;
-  /* Added a dark overlay to make the white text pop */
-  background: url("images/homepage.webp");
-  background-size: cover;
-  background-position: 50% 0%; /* Set to 0% so GSAP can parallax it to 100% */
+  background: url("images/homepage.webp") 50% 0% / cover no-repeat;
   overflow: hidden; /* Prevents animation overflow */
 }
 
@@ -23,7 +67,6 @@ body {
   font-weight: 600;
   font-size: 64px;
   line-height: 1;
-  /* Added perspective for the 3D text flip animation */
   perspective: 1000px;
 }
 
@@ -34,13 +77,14 @@ body {
   margin-left: 0px !important;
 }
 
-/* --- Title Section --- */
-
+/* Title Section */
 .title-section {
-  height: 323px;
+  min-height: 323px;
+  height: auto;
   display: flex;
   align-items: center;
 }
+
 .title-section h2 {
   font-weight: 600;
   font-size: 54px;
@@ -48,7 +92,22 @@ body {
   max-width: 1352px;
 }
 
-/* --- Form Section --- */
+.title-container {
+  padding-left: 0px;
+}
+
+/* Form Section */
+.info-wrapper {
+  padding: 0px;
+  max-width: 551px;
+}
+
+.form-wrapper {
+  max-width: 670px;
+  margin-left: 100px;
+  padding: 0px;
+}
+
 .custom-form .form-label {
   font-family: var(--font-author);
   font-weight: 500;
@@ -75,7 +134,7 @@ body {
   padding-left: 10px;
 }
 
-/* --- CTA Yellow Card --- */
+/* CTA Yellow Card (From Original Code) */
 .cta-card {
   background-color: #ffca00;
   min-height: 450px;
@@ -100,57 +159,15 @@ body {
   font-size: 12px;
 }
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 991px) {
-  .hero-title {
-    font-size: 48px;
+/* Responsive Adjustments (Tablet & Mobile) */
+@media (max-width: 992px) {
+  .content-container {
+    width: calc(100% - 2.5rem);
   }
+
   .hero-section {
     height: auto;
-    padding-top: 100px;
-  }
-  .title-section h2 {
-    font-size: 36px;
-  }
-  .hero-subtitle {
-    margin-left: 0 !important;
-  }
-  .cta-image-bg {
-    background-position: center;
-  }
-}
-
-/* --- Custom Wrapper Layouts (Desktop View) --- */
-
-.title-container {
-  padding-left: 0px;
-}
-
-.info-wrapper {
-  padding: 0px;
-  max-width: 551px;
-}
-
-.form-wrapper {
-  max-width: 670px;
-  margin-left: 100px;
-  padding: 0px;
-}
-
-/* Let the title section be flexible for mobile text wrapping */
-.title-section {
-  min-height: 323px;
-  height: auto;
-  display: flex;
-  align-items: center;
-}
-
-/* --- Responsive Adjustments (Tablet & Mobile) --- */
-@media (max-width: 991px) {
-  /* Hero Section Mobile */
-  .hero-section {
-    height: auto;
-    padding-top: 150px; /* Gives breathing room below mobile navbar */
+    padding-top: 150px;
     padding-bottom: 50px !important;
   }
 
@@ -159,7 +176,10 @@ body {
     text-align: center;
   }
 
-  /* Title Section Mobile */
+  .hero-subtitle {
+    margin-left: 0 !important;
+  }
+
   .title-section {
     min-height: auto;
     padding: 60px 0;
@@ -175,9 +195,8 @@ body {
     padding-right: 15px;
   }
 
-  /* Form Section Mobile */
   .form-wrapper {
-    margin-left: 0; /* Removes the 100px desktop gap */
+    margin-left: 0;
     max-width: 100%;
     margin-top: 50px;
     padding: 0 15px;
@@ -195,124 +214,6 @@ body {
 }
 
 /* Extra small devices (Phones) */
-@media (max-width: 575px) {
-  .hero-title {
-    font-size: 38px;
-  }
-  .title-section h2 {
-    font-size: 26px;
-  }
-  .custom-form .form-control {
-    font-size: 16px; /* Prevents mobile browser auto-zoom on input */
-  }
-}
-
-/* Custom Typography Variables */
-:root {
-  --font-sharp: "Sharp Sans", sans-serif;
-  --font-author: "Author", sans-serif;
-}
-
-body {
-  font-family: var(--font-sharp);
-}
-
-/* --- Perfect Grid Alignment with Header --- */
-.content-container {
-  width: calc(100% - 8rem);
-  max-width: 1352px;
-  margin: 0 auto;
-  /* padding: 0 3rem; */
-}
-
-/* --- Hero Section --- */
-.hero-section {
-  height: 600px;
-  background: url("images/homepage.webp") 50% 0% / cover no-repeat;
-  overflow: hidden;
-}
-
-.hero-title {
-  font-weight: 600;
-  font-size: 64px;
-  /* line-height: 1; */
-  perspective: 1000px;
-}
-
-.hero-subtitle {
-  font-weight: 600;
-  font-size: 18px;
-  max-width: 437px;
-}
-
-/* --- Title Section --- */
-.title-section {
-  min-height: 323px;
-  display: flex;
-  align-items: center;
-}
-
-.title-section h2 {
-  font-weight: 600;
-  font-size: 54px;
-  line-height: 1.2;
-}
-
-/* --- Form Section --- */
-.custom-form .form-label {
-  font-family: var(--font-author);
-  font-weight: 500;
-  font-size: 20px;
-  color: #ffffff;
-}
-
-.custom-form .form-control {
-  background: #ffffff;
-  border: 1px solid #f6f6f6;
-  border-radius: 8px;
-  padding: 12px 14px;
-  font-family: var(--font-author);
-  font-size: 20px;
-}
-
-.custom-form .form-control::placeholder {
-  color: #9a9a9a;
-}
-
-.btn-warning {
-  background-color: #ffca00;
-  border-color: #ffca00;
-  padding-left: 10px;
-}
-
-/* --- Responsive Adjustments (Tablet) --- */
-@media (max-width: 992px) {
-  .content-container {
-    width: calc(100% - 2.5rem);
-    /* padding: 0 2rem; */
-  }
-
-  .hero-section {
-    height: auto;
-    padding-top: 150px;
-    padding-bottom: 50px !important;
-  }
-
-  .hero-title {
-    font-size: 48px;
-  }
-
-  .title-section {
-    min-height: auto;
-    padding: 60px 0;
-  }
-
-  .title-section h2 {
-    font-size: 32px;
-  }
-}
-
-/* --- Responsive Adjustments (Mobile) --- */
 @media (max-width: 768px) {
   .content-container {
     width: calc(100% - 2rem);
@@ -325,8 +226,10 @@ body {
   .title-section h2 {
     font-size: 26px;
   }
+}
 
+@media (max-width: 575px) {
   .custom-form .form-control {
-    font-size: 16px;
+    font-size: 16px; /* Prevents mobile browser auto-zoom on input */
   }
 }
