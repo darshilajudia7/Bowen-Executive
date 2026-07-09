@@ -1,0 +1,332 @@
+/* Custom Typography Variables */
+:root {
+  --font-sharp: "Sharp Sans", sans-serif;
+  --font-author: "Author", sans-serif;
+}
+
+body {
+  font-family: var(--font-sharp);
+}
+
+/* --- Hero Section --- */
+/* --- Hero Section --- */
+.hero-section {
+  height: 600px;
+  /* Added a dark overlay to make the white text pop */
+  background: url("images/homepage.webp");
+  background-size: cover;
+  background-position: 50% 0%; /* Set to 0% so GSAP can parallax it to 100% */
+  overflow: hidden; /* Prevents animation overflow */
+}
+
+.hero-title {
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 1;
+  /* Added perspective for the 3D text flip animation */
+  perspective: 1000px;
+}
+
+.hero-subtitle {
+  font-weight: 600;
+  font-size: 18px;
+  max-width: 437px;
+  margin-left: 0px !important;
+}
+
+/* --- Title Section --- */
+
+.title-section {
+  height: 323px;
+  display: flex;
+  align-items: center;
+}
+.title-section h2 {
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 1.2;
+  max-width: 1352px;
+}
+
+/* --- Form Section --- */
+.custom-form .form-label {
+  font-family: var(--font-author);
+  font-weight: 500;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.custom-form .form-control {
+  background: #ffffff;
+  border: 1px solid #f6f6f6;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: var(--font-author);
+  font-size: 20px;
+}
+
+.custom-form .form-control::placeholder {
+  color: #9a9a9a;
+}
+
+.btn-warning {
+  background-color: #ffca00;
+  border-color: #ffca00;
+  padding-left: 10px;
+}
+
+/* --- CTA Yellow Card --- */
+.cta-card {
+  background-color: #ffca00;
+  min-height: 450px;
+}
+
+.cta-image-bg {
+  background: url("bg_removal [Background removed].png");
+  background-size: contain;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  min-height: 300px;
+}
+
+.icon-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1.75px solid #000;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 48px;
+  }
+  .hero-section {
+    height: auto;
+    padding-top: 100px;
+  }
+  .title-section h2 {
+    font-size: 36px;
+  }
+  .hero-subtitle {
+    margin-left: 0 !important;
+  }
+  .cta-image-bg {
+    background-position: center;
+  }
+}
+
+/* --- Custom Wrapper Layouts (Desktop View) --- */
+
+.title-container {
+  padding-left: 0px;
+}
+
+.info-wrapper {
+  padding: 0px;
+  max-width: 551px;
+}
+
+.form-wrapper {
+  max-width: 670px;
+  margin-left: 100px;
+  padding: 0px;
+}
+
+/* Let the title section be flexible for mobile text wrapping */
+.title-section {
+  min-height: 323px;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* --- Responsive Adjustments (Tablet & Mobile) --- */
+@media (max-width: 991px) {
+  /* Hero Section Mobile */
+  .hero-section {
+    height: auto;
+    padding-top: 150px; /* Gives breathing room below mobile navbar */
+    padding-bottom: 50px !important;
+  }
+
+  .hero-title {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  /* Title Section Mobile */
+  .title-section {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .title-section h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .title-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Form Section Mobile */
+  .form-wrapper {
+    margin-left: 0; /* Removes the 100px desktop gap */
+    max-width: 100%;
+    margin-top: 50px;
+    padding: 0 15px;
+  }
+
+  .info-wrapper {
+    max-width: 100%;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .cta-image-bg {
+    background-position: center;
+  }
+}
+
+/* Extra small devices (Phones) */
+@media (max-width: 575px) {
+  .hero-title {
+    font-size: 38px;
+  }
+  .title-section h2 {
+    font-size: 26px;
+  }
+  .custom-form .form-control {
+    font-size: 16px; /* Prevents mobile browser auto-zoom on input */
+  }
+}
+
+/* Custom Typography Variables */
+:root {
+  --font-sharp: "Sharp Sans", sans-serif;
+  --font-author: "Author", sans-serif;
+}
+
+body {
+  font-family: var(--font-sharp);
+}
+
+/* --- Perfect Grid Alignment with Header --- */
+.content-container {
+  width: calc(100% - 8rem);
+  max-width: 1352px;
+  margin: 0 auto;
+  /* padding: 0 3rem; */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  height: 600px;
+  background: url("images/homepage.webp") 50% 0% / cover no-repeat;
+  overflow: hidden;
+}
+
+.hero-title {
+  font-weight: 600;
+  font-size: 64px;
+  /* line-height: 1; */
+  perspective: 1000px;
+}
+
+.hero-subtitle {
+  font-weight: 600;
+  font-size: 18px;
+  max-width: 437px;
+}
+
+/* --- Title Section --- */
+.title-section {
+  min-height: 323px;
+  display: flex;
+  align-items: center;
+}
+
+.title-section h2 {
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 1.2;
+}
+
+/* --- Form Section --- */
+.custom-form .form-label {
+  font-family: var(--font-author);
+  font-weight: 500;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.custom-form .form-control {
+  background: #ffffff;
+  border: 1px solid #f6f6f6;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: var(--font-author);
+  font-size: 20px;
+}
+
+.custom-form .form-control::placeholder {
+  color: #9a9a9a;
+}
+
+.btn-warning {
+  background-color: #ffca00;
+  border-color: #ffca00;
+  padding-left: 10px;
+}
+
+/* --- Responsive Adjustments (Tablet) --- */
+@media (max-width: 992px) {
+  .content-container {
+    width: calc(100% - 2.5rem);
+    /* padding: 0 2rem; */
+  }
+
+  .hero-section {
+    height: auto;
+    padding-top: 150px;
+    padding-bottom: 50px !important;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .title-section {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .title-section h2 {
+    font-size: 32px;
+  }
+}
+
+/* --- Responsive Adjustments (Mobile) --- */
+@media (max-width: 768px) {
+  .content-container {
+    width: calc(100% - 2rem);
+  }
+
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .title-section h2 {
+    font-size: 26px;
+  }
+
+  .custom-form .form-control {
+    font-size: 16px;
+  }
+}

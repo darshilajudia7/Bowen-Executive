@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bowen Executive - Get in Touch</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="header_footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Preconnect to third-party origins to speed up the requests below -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- Custom CSS (kept render-blocking on purpose: page layout depends on it, avoids flash of unstyled content) -->
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="header_footer.css">
+
+    <!-- Google Fonts: loaded async (non-critical for first paint), falls back safely if JS is off -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <!-- GSAP & Lenis Smooth Scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+</head>
+
+<body class="loading">
+
+    <!-- HEADER -->
+    <div class="preloader">
+        <img src="images/Logo.svg" alt="Logo Loader" class="loader-logo">
+    </div>
+
+    <div class="mobile-nav-overlay" aria-hidden="true" role="navigation">
+        <div class="mobile-nav-close" aria-label="Close menu" role="button" tabindex="0">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor"
+                stroke-width="3" stroke-linecap="round" style="display:inline-block;vertical-align:-0.125em">
+                <line x1="4" y1="4" x2="20" y2="20" />
+                <line x1="20" y1="4" x2="4" y2="20" />
+            </svg>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Civil Insight</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#" class="mobile-contact-btn">Contact</a></li>
+        </ul>
+    </div>
+
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main Navigation">
+            <div class="logo">
+                <img src="images/Logo.svg" alt="Bowen Executive Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Services
+                        <img src="icons/drop-down.svg" alt="Dropdown Arrow" class="dropdown-arrow" height="24"
+                            width="24">
+                    </a>
+                </li>
+                <li><a href="#">Civil Insight</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="nav-contact">
+                <a href="contact.html" class="btn-outline">Contact</a>
+            </div>
+            <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor"
+                    stroke-width="2.5" stroke-linecap="round" style="display:inline-block;vertical-align:-0.125em">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section position-relative d-flex align-items-end pb-5">
+        <div class="content-container">
+            <div class="row align-items-start justify-content-between">
+                <div class="col-lg-6 hero-anim">
+                    <h1 class="hero-title text-white m-0 text-start">
+                        Get in Touch
+                    </h1>
+                </div>
+
+                <div class="col-lg-4 hero-anim ms-lg-auto">
+                    <p class="hero-subtitle text-white m-0 text-lg-start text-start">
+                        There is no intake form, no automated response, and no account manager. You will speak directly
+                        with Nick Prokop.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="title-section bg-white py-3">
+        <div class="content-container text-start">
+            <h2 class="section-title text-black m-0 title-anim text-start">
+                Bowen Executive | Civil Construction Specialist Recruitment
+            </h2>
+        </div>
+    </section>
+
+    <section class="form-section py-5 overflow-hidden">
+        <div class="content-container py-5">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0 info-anim">
+                    <div class="mb-5">
+                        <h3 class="text-warning fw-semibold mb-3">Hiring in Civil Construction?</h3>
+                        <p class="fw-medium">Whether you are a GC with an active search or thinking about your long-term
+                            leadership structure — reach out directly.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-warning fw-semibold mb-3">Working in Civil Construction?</h3>
+                        <p class="fw-medium">If you are a Civil Site Superintendent or senior construction professional
+                            open to a confidential conversation about your next move — get in touch.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 offset-lg-1 form-anim">
+                    <form class="custom-form">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name*</label>
+                                <input type="text" class="form-control" placeholder="e.x. Nick Prokop" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Your Company*</label>
+                                <input type="text" class="form-control" placeholder="e.x. Google" required>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Email*</label>
+                                <input type="email" class="form-control" placeholder="name@example.com" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="e.x. +1 123 9876 5432">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">Message*</label>
+                            <textarea class="form-control" rows="5" placeholder="Share your thoughts..."
+                                required></textarea>
+                        </div>
+
+                        <div class="text-end">
+                            <button type="submit"
+                                class="btn btn-warning rounded-pill px-4 fw-semibold text-white">Contact</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- FOOTER -->
+    <section class="cta-spacer" aria-hidden="true"></section>
+
+    <footer class="site-footer" aria-label="Site Footer">
+        <div class="contact-banner-wrapper">
+            <div class="contact-banner">
+                <div class="banner-content">
+                    <p class="banner-intro">Open to a confidential conversation about your next<br>move? Reach out
+                        directly. No pressure, no noise.</p>
+                    <h2>Nick Prokop</h2>
+                    <p class="banner-sub">Bowen Executive</p>
+                    <div class="banner-contact-links">
+                        <a href="#" aria-label="Send email to Nick Prokop">
+                            <img src="icons/email.svg" alt="Email Icon" class="email-icon" height="24" width="24">
+                            Email
+                        </a>
+                        <a href="#" aria-label="Connect with Nick Prokop on LinkedIn">
+                            <img src="icons/linkdin.svg" alt="LinkedIn Icon" class="linkedin-icon" height="24"
+                                width="24">
+                            Linkedin
+                        </a>
+                        <a href="#" aria-label="Call Nick Prokop">
+                            <img src="icons/phone.svg" alt="Phone Icon" class="phone-icon" height="24" width="24">
+                            Phone
+                        </a>
+                    </div>
+                </div>
+                <img src="images/Nick-Prokop-Image.webp" alt="Nick Prokop - Bowen Executive Recruiter" class="nick-img">
+            </div>
+        </div>
+
+        <div class="footer-content-wrapper">
+            <div class="footer-top">
+                <div class="footer-col brand-col">
+                    <img src="images/Logo.svg" alt="Bowen Executive Logo" class="footer-logo">
+                    <p>Bowen Executive recruits exclusively within U.S. civil construction — senior leadership,
+                        retained executive search, and the Civil Site Superintendents who run the
+                        field. One sector. One focus.</p>
+                    <div class="social-links">
+                        <span>Follow Us</span>
+                        <a href="#" aria-label="Follow Bowen Executive on Facebook">
+                            <img src="./icons/Facebook.svg" alt="Facebook Icon" class="facebook-icon" height="36"
+                                width="36">
+                        </a>
+                        <a href="#" aria-label="Follow Bowen Executive on Instagram">
+                            <img src="./icons/Instagram.svg" alt="Instagram Icon" class="instagram-icon" height="36"
+                                width="36">
+                        </a>
+                        <a href="#" aria-label="Follow Bowen Executive on LinkedIn">
+                            <img src="./icons/Linkedin.svg" alt="LinkedIn Icon" class="linkedin-icon" height="36"
+                                width="36">
+                        </a>
+                        <a href="#" aria-label="Contact Bowen Executive via WhatsApp">
+                            <img src="./icons/Whatsapp.svg" alt="WhatsApp Icon" class="whatsapp-icon" height="36"
+                                width="36">
+                        </a>
+                        <a href="#" aria-label="Follow Bowen Executive on YouTube">
+                            <img src="./icons/Youtube.svg" alt="YouTube Icon" class="youtube-icon" height="36"
+                                width="36">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links-wrapper">
+                    <div class="footer-col links-col">
+                        <h4>Core Services</h4>
+                        <ul>
+                            <li><a href="#">Civil Site Superintendent Specialisation</a></li>
+                            <li><a href="#">Retained Executive Search</a></li>
+                            <li><a href="#">Leadership Continuity & Succession</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col links-col small-col">
+                        <h4>All</h4>
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="#">Civil Insight</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p> <span style="color: white;">© 2026, Bowen Executive •</span>
+                    <span style="color: #ffca00;"> Website by Comsci</span>
+                </p>
+            </div>
+
+            <div class="footer-overlay">
+                <img src="images/footer.webp" alt="Footer graphic overlay" class="nick-img-overlay">
+            </div>
+
+        </div>
+
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="header_footer.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // 1. Parallax Background
+            gsap.to(".hero-section", {
+                backgroundPosition: "50% 100%",
+                ease: "none",
+                scrollTrigger: { trigger: ".hero-section", start: "top top", end: "bottom top", scrub: true }
+            });
+
+            // 2. 3D Text Reveal
+            gsap.from(".hero-title, .hero-subtitle", {
+                y: 80, opacity: 0, rotationX: -45, transformOrigin: "0% 50% -50", duration: 1.5, stagger: 0.2, ease: "power4.out", delay: 0.2
+            });
+
+            // 3. Title Scrub Reveal
+            gsap.from(".title-section h2", {
+                scrollTrigger: { trigger: ".title-section", start: "top 85%", end: "top 40%", scrub: 1 },
+                y: 40, opacity: 0, scale: 0.95, transformOrigin: "left center"
+            });
+
+            // 4. Form Info Column Entrance
+            gsap.from(".form-section .info-anim > div", {
+                scrollTrigger: { trigger: ".form-section", start: "top 75%" },
+                x: -50, opacity: 0, duration: 1.2, stagger: 0.3, ease: "power3.out"
+            });
+
+            // 5. Form Inputs Entrance
+            gsap.from(".custom-form .row, .custom-form .mb-4, .custom-form .text-end", {
+                scrollTrigger: { trigger: ".custom-form", start: "top 80%" },
+                y: 40, opacity: 0, duration: 1, stagger: 0.15, ease: "back.out(1.2)"
+            });
+        });
+    </script>
+</body>
+
+</html>

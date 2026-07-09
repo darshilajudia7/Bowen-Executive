@@ -835,13 +835,11 @@ body.loading {
   }
 
   .contact-banner-wrapper {
-    padding: 0 1rem;
     transform: translateY(-80px);
     margin-bottom: -30px;
   }
 
   .footer-content-wrapper {
-    padding: 0 1rem;
     margin-top: 0;
   }
 
