@@ -1,0 +1,270 @@
+/* TYPOGRAPHY & VARIABLES */
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("font/Sharp Sans Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("font/Sharp Sans.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("font/Sharp Sans Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("font/Sharp Sans Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("font/SharpSansBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*  RESET & VARIABLES  */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-sharp: "Sharp Sans", sans-serif;
+  --text-dark: #000000;
+  --text-gray: #484848;
+  --text-light: #ffffff;
+}
+
+body {
+  font-family: var(--font-sharp);
+  background-color: #f5f5f5;
+}
+
+/*  GLOBAL LAYOUT SYSTEM  */
+.container {
+  width: 100%;
+  max-width: 1352px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/*  HERO SECTION  */
+.hero-section {
+  min-height: 600px;
+  background: url("images/homepage.webp") center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 3rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.hero-title {
+  font-weight: 600;
+  font-size: clamp(40px, 5vw, 64px);
+  color: var(--text-light);
+  line-height: 1.1;
+  flex: 1 1 600px;
+}
+
+.hero-subtitle {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-light);
+  max-width: 437px;
+  flex: 1 1 300px;
+}
+
+/*  ABOUT SECTION  */
+.about-section {
+  padding: 90px 0;
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-bottom: 90px;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: clamp(36px, 4vw, 54px);
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+.text-content {
+  max-width: 895px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.text-content p {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--text-gray);
+}
+
+/*  IMAGE FRAME  */
+.image-frame-container {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #eee;
+  margin-bottom: 90px;
+}
+
+.scroll-spacer {
+  height: 100%;
+  position: relative;
+}
+
+.sticky-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.image-bg-1 {
+  opacity: 1;
+  background-image: url("images//homepage.webp");
+}
+
+.image-bg-2 {
+  background-image: url("images/homepage-2.webp");
+}
+
+.image-bg-3 {
+  background-image: url("images/Civil-Insight-Image.webp");
+}
+
+/*  MARKET / MAP SECTION  */
+.market-section {
+  padding: 90px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.market-container {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.text-group {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.market-title {
+  font-weight: 600;
+  font-size: 26px;
+  color: var(--text-light);
+}
+
+.market-desc {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--text-light);
+}
+
+.map-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+.map-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .container.p-0 {
+    padding: 0 20px !important;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .hero-title,
+  .hero-subtitle {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .about-section,
+  .market-section {
+    padding: 60px 0;
+  }
+
+  .text-section {
+    margin-bottom: 60px;
+    gap: 20px;
+  }
+
+  .image-frame {
+    margin-bottom: 60px;
+    height: 300px;
+  }
+
+  .market-container {
+    gap: 40px;
+  }
+}
