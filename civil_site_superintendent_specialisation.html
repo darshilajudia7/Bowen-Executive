@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bowen Executive - Get in Touch</title>
+    <title>Bowen Executive - About Page</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
     <link rel="stylesheet" href="header_footer.css">
-    <link rel="stylesheet" href="civil_section_inside.css">
+    <link rel="stylesheet" href="about.css">
 
     <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap">
@@ -28,6 +28,204 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js" defer></script>
+
+    <style>
+        .la-text-top,
+        .la-text-bottom {
+            position: absolute;
+            left: 60px;
+            z-index: 2;
+        }
+
+        .la-text-top {
+            top: 60px;
+            max-width: 717px;
+        }
+
+        .la-text-top h2 {
+            font-family: var(--font-sharp);
+            font-weight: 600;
+            font-size: clamp(32px, 4vw, 54px);
+            line-height: 1.2;
+            color: var(--text-light, #ffffff);
+        }
+
+        .la-text-bottom {
+            bottom: 60px;
+            max-width: 432px;
+        }
+
+        .la-text-bottom p {
+            font-family: var(--font-sharp);
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 1.4;
+            color: var(--text-light, #ffffff);
+        }
+
+        .sectors-section {
+            background: #000000;
+            padding: 90px 80px;
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        /* Header Alignment */
+        .sectors-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 64px;
+            max-width: 1352px;
+            height: 64px;
+        }
+
+        .sectors-header h2 {
+            font-family: 'Sharp Sans', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 54px;
+            line-height: 64px;
+            color: #FFFFFF;
+            margin: 0;
+        }
+
+        /* Carousel Navigation Buttons (Desktop) */
+        .carousel-nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-arrow-btn {
+            background: transparent;
+            border: none;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-arrow-btn svg {
+            stroke: #FFFFFF;
+        }
+
+        /* Grid / Slider Layout (Desktop) */
+        .sectors-grid {
+            display: flex;
+            gap: 25px;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            padding-bottom: 10px;
+        }
+
+        .sector-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            width: 432px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 404.26px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+            pointer-events: none;
+        }
+
+        .sector-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .sector-info h3 {
+            font-family: 'Sharp Sans', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 26px;
+            line-height: 34px;
+            color: #FFCA00;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sector-info p {
+            font-family: 'Sharp Sans', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            color: #FFFFFF;
+            margin: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 991px) {
+            .sectors-section {
+                padding: 40px 20px;
+            }
+
+            .sectors-header {
+                margin-bottom: 40px;
+            }
+
+            .sectors-header h2 {
+                font-size: 40px;
+            }
+
+            .carousel-nav {
+                display: none;
+            }
+
+            .sectors-grid {
+                flex-direction: column;
+                overflow-x: visible;
+                align-items: center;
+                gap: 40px;
+            }
+
+            .sector-card {
+                width: 100%;
+                max-width: 450px;
+            }
+
+            .image-container {
+                height: auto;
+                aspect-ratio: 432 / 404;
+            }
+        }
+    </style>
 </head>
 
 <body class="loading">
@@ -49,7 +247,7 @@
             <li><a href="#">Services</a></li>
             <li><a href="#">Civil Insight</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="./contact.html" class="mobile-contact-btn">Contact</a></li>
+            <li><a href="#" class="mobile-contact-btn">Contact</a></li>
         </ul>
     </div>
 
@@ -70,7 +268,7 @@
                 <li><a href="#">About</a></li>
             </ul>
             <div class="nav-contact">
-                <a href="./contact.html" class="btn-outline">Contact</a>
+                <a href="contact.html" class="btn-outline">Contact</a>
             </div>
             <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
                 <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor"
@@ -100,7 +298,7 @@
                     <li><a href="#">About</a></li>
                 </ul>
                 <div class="dropdown-nav-contact">
-                    <a href="./contact.html" class="btn-solid-dark">Contact</a>
+                    <a href="#" class="btn-solid-dark">Contact</a>
                 </div>
             </nav>
             <div class="dropdown-cards">
@@ -177,62 +375,150 @@
     </div>
 
     <main>
-        <section class="hero-section position-relative d-flex align-items-end pb-5">
-            <div class="content-container">
-                <div class="row align-items-start justify-content-between">
-                    <div class="col-lg-6 hero-anim">
-                        <h1 class="hero-title text-white m-0 text-start">
-                            Civil Sector Insights
-                        </h1>
+        <section class="hero-section">
+            <div class="container hero-container p-0">
+                <div class="hero-content">
+                    <h1 class="hero-title" style="width: 700px; flex: 0;">
+                        Civil Site Superintendent Specialisation
+                    </h1>
+                    <p class="hero-subtitle text-center" style="margin-top: auto;">U.S. civil construction is all we do.
+                        Site
+                        Superintendents are our core
+                        focus.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section bg-white">
+            <div class="container p-0">
+                <div class="text-section">
+                    <div class="text-content">
+                        <p>U.S. civil construction is our world — heavy civil, wet utilities, and infrastructure — every
+                            day, on every search. When you call Bowen Executive, you are talking to someone already
+                            inside your world.</p>
+                        <p>We focus here because depth matters. Knowing the sector, knowing the market, knowing who is
+                            available and who is right for the job — that only comes from doing nothing else.</p>
                     </div>
-                    <div class="col-lg-4 hero-anim ms-lg-auto mt-4 mt-lg-0">
-                        <p class="hero-subtitle text-white m-0 text-start">
-                            Hiring trends, leadership perspectives, and market commentary from within U.S. civil
-                            construction.
-                        </p>
+                </div>
+
+                <div class="image-frame-container">
+
+                    <div class="scroll-spacer">
+
+                        <div class="sticky-image-wrapper">
+                            <div class="image-overlay image-bg-1">
+                                <div class="la-text-top">
+                                    <h2>Structural Engineering</h2>
+                                </div>
+                                <div class="la-text-bottom">
+                                    <p>Designing robust foundations and load-bearing frameworks for commercial and
+                                        residential
+                                        developments.</p>
+                                </div>
+                            </div>
+                            <div class="image-overlay image-bg-2">
+                                <div class="la-text-top">
+                                    <h2>Project Management</h2>
+                                </div>
+                                <div class="la-text-bottom">
+                                    <p>Overseeing construction timelines, resource allocation, and site safety from
+                                        groundbreaking to completion.</p>
+                                </div>
+                            </div>
+                            <div class="image-overlay image-bg-3">
+                                <div class="la-text-top">
+                                    <h2>Sustainable Infrastructure</h2>
+                                </div>
+                                <div class="la-text-bottom">
+                                    <p>Integrating eco-friendly materials and energy-efficient designs into modern urban
+                                        environments.</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="title-section bg-white py-3">
-            <div class="content-container text-start">
-                <p class="section-title text-black m-0 title-anim text-start">
-                    The civil construction market moves quickly. Project pipelines shift, talent markets
-                    tighten, and the pressure on GCs to find and retain the right leaders does not let up.
-                </p>
-            </div>
-        </section>
-
-        <section class="py-5 insights-section">
-            <div class="container responsive-container">
-                <div class="row g-4">
-                    <div class="col-12 col-sm-6 col-lg-3" style="padding-left: 0px;">
-                        <a href="#" class="insight-card">
-                            <div class="insight-img" style="background-image:url('images/Civil-1.webp');"></div>
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3" style="padding-left: 0px;">
-                        <a href="#" class="insight-card">
-                            <div class="insight-img" style="background-image:url('images/Civil-2.webp');"></div>
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3" style="padding-left: 0px;">
-                        <a href="#" class="insight-card">
-                            <div class="insight-img" style="background-image:url('images/Civil-3.webp');"></div>
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3" style="padding-right: 0px;">
-                        <a href="#" class="insight-card">
-                            <div class="insight-img" style="background-image:url('images/Civil-4.webp');"></div>
-                        </a>
+        <!-- SERVICES SECTION -->
+        <section class="sectors-section" aria-label="Sectors">
+            <div class="sectors-container mx-auto">
+                <div class="sectors-header">
+                    <h2>Sectors</h2>
+                    <div class="carousel-nav">
+                        <button class="nav-arrow-btn" id="prev-btn" aria-label="Previous sector">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="transform: rotate(180deg);">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <button class="nav-arrow-btn" id="next-btn" aria-label="Next sector">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
-                <div class="text-center mt-5">
-                    <a href="#" class="follow-link">
-                        Follow @bowenexecutive
+                <div class="sectors-grid" id="sectors-slider">
+                    <a href="#" class="sector-card" aria-label="Heavy Civil Sector">
+                        <div class="image-container">
+                            <img src="images/Service-image-1.webp" alt="Heavy Civil - Worker holding a hard hat">
+                        </div>
+                        <div class="sector-info">
+                            <h3>Heavy Civil</h3>
+                            <p>Large-scale earthworks, grading, and civil infrastructure construction.</p>
+                        </div>
                     </a>
+
+                    <a href="#" class="sector-card" aria-label="Wet Utilities Sector">
+                        <div class="image-container">
+                            <img src="images/Service-image-2.webp" alt="Wet Utilities - Construction manager walking">
+                        </div>
+                        <div class="sector-info">
+                            <h3>Wet Utilities</h3>
+                            <p>Underground water, sewer, and stormwater infrastructure across the U.S. civil sector.</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="sector-card" aria-label="Civil Infrastructure Sector">
+                        <div class="image-container">
+                            <img src="images/Service-image-3.webp"
+                                alt="Civil Infrastructure - Engineers discussing on site">
+                        </div>
+                        <div class="sector-info">
+                            <h3>Civil Infrastructure</h3>
+                            <p>Highways, bridges, transportation, and public works.</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="sector-card" aria-label="Marine Construction Sector">
+                        <div class="image-container">
+                            <img src="images/Service-image-1.webp" alt="Marine Construction - Workers near a dock">
+                        </div>
+                        <div class="sector-info">
+                            <h3>Marine Construction</h3>
+                            <p>Ports, harbors, dredging, coastal infrastructure, and waterway management projects.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="market-section bg-black">
+            <div class="container market-container">
+                <div class="text-group">
+                    <h3 class="market-title">
+                        Texas is our primary market. We recruit nationally across the United States.
+                    </h3>
+                </div>
+
+                <div class="map-wrapper">
+                    <img src="images/USA.svg" alt="US Map with Texas Highlighted">
                 </div>
             </div>
         </section>
@@ -315,7 +601,7 @@
                             <li><a href="./index.html">Home</a></li>
                             <li><a href="#">Civil Insight</a></li>
                             <li><a href="#">About</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -334,7 +620,31 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="header_footer.js" defer></script>
-    <script src="civil_section_inside.js"></script>
+    <script src="about.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slider = document.getElementById("sectors-slider");
+            const prevBtn = document.getElementById("prev-btn");
+            const nextBtn = document.getElementById("next-btn");
+
+            // Dynamic scroll amount based on card size + gap
+            const getScrollAmount = () => {
+                const card = slider.querySelector(".sector-card");
+                const gap = parseInt(window.getComputedStyle(slider).gap) || 0;
+                return card.offsetWidth + gap;
+            };
+
+            // Scroll Left
+            prevBtn.addEventListener("click", () => {
+                slider.scrollLeft -= getScrollAmount();
+            });
+
+            // Scroll Right
+            nextBtn.addEventListener("click", () => {
+                slider.scrollLeft += getScrollAmount();
+            });
+        });
+    </script>
 </body>
 
 </html>

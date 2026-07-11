@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadership Continuity & Succession - Bowen Executive</title>
+    <title>Bowen Executive - Get in Touch</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
     <link rel="stylesheet" href="header_footer.css">
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="civil_inside.css">
 
     <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap">
@@ -28,135 +28,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js" defer></script>
-
-    <style>
-        /* Stat bullet list (Leadership transition data points) */
-        .stats-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .stats-list li {
-            position: relative;
-            padding-left: 20px;
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 1.4;
-            color: var(--text-gray, #484848);
-        }
-
-        .stats-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 11px;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: var(--text-gray, #484848);
-        }
-
-        .stats-conclusion {
-            margin-top: 4px;
-        }
-
-        /* Leadership Assessment image block - same reveal pattern as .image-frame-container */
-        .leadership-assessment-section {
-            position: relative;
-            width: 100%;
-            height: 600px;
-            overflow: hidden;
-            border-radius: 12px;
-            margin-bottom: 90px;
-            will-change: transform, clip-path;
-        }
-
-        .la-image-overlay {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            will-change: opacity;
-        }
-
-        .la-bg-1 {
-            opacity: 1;
-            background-image: url("images/Civil-Insight-Image.webp");
-        }
-
-        .la-bg-2 {
-            background-image: url("images/homepage-2.webp");
-        }
-
-        .la-bg-3 {
-            background-image: url("images/homepage.webp");
-        }
-
-        .la-overlay-tint {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .la-text-top,
-        .la-text-bottom {
-            position: absolute;
-            left: 60px;
-            z-index: 2;
-        }
-
-        .la-text-top {
-            top: 60px;
-            max-width: 717px;
-        }
-
-        .la-text-top h2 {
-            font-family: var(--font-sharp);
-            font-weight: 600;
-            font-size: clamp(32px, 4vw, 54px);
-            line-height: 1.2;
-            color: var(--text-light, #ffffff);
-        }
-
-        .la-text-bottom {
-            bottom: 60px;
-            max-width: 432px;
-        }
-
-        .la-text-bottom p {
-            font-family: var(--font-sharp);
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 1.4;
-            color: var(--text-light, #ffffff);
-        }
-
-        @media (max-width: 768px) {
-            .leadership-assessment-section {
-                height: 420px;
-                margin-bottom: 60px;
-            }
-
-            .la-text-top,
-            .la-text-bottom {
-                left: 24px;
-                right: 24px;
-                max-width: calc(100% - 48px);
-            }
-
-            .la-text-top {
-                top: 32px;
-            }
-
-            .la-text-bottom {
-                bottom: 32px;
-            }
-        }
-    </style>
 </head>
 
 <body class="loading">
@@ -178,7 +49,7 @@
             <li><a href="#">Services</a></li>
             <li><a href="#">Civil Insight</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#" class="mobile-contact-btn">Contact</a></li>
+            <li><a href="./contact.html" class="mobile-contact-btn">Contact</a></li>
         </ul>
     </div>
 
@@ -199,7 +70,7 @@
                 <li><a href="#">About</a></li>
             </ul>
             <div class="nav-contact">
-                <a href="contact.html" class="btn-outline">Contact</a>
+                <a href="./contact.html" class="btn-outline">Contact</a>
             </div>
             <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
                 <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor"
@@ -229,7 +100,7 @@
                     <li><a href="#">About</a></li>
                 </ul>
                 <div class="dropdown-nav-contact">
-                    <a href="#" class="btn-solid-dark">Contact</a>
+                    <a href="./contact.html" class="btn-solid-dark">Contact</a>
                 </div>
             </nav>
             <div class="dropdown-cards">
@@ -306,82 +177,63 @@
     </div>
 
     <main>
-        <section class="hero-section">
-            <div class="container hero-container p-0">
-                <div class="hero-content">
-                    <h1 class="hero-title">Leadership Continuity &amp; Succession</h1>
-                    <p class="hero-subtitle">The civil construction industry is facing a leadership transition it is
-                        not prepared for.</p>
+        <section class="hero-section position-relative d-flex align-items-end pb-5">
+            <div class="content-container">
+                <div class="row align-items-start justify-content-between">
+                    <div class="col-lg-6 hero-anim">
+                        <h1 class="hero-title text-white m-0 text-start">
+                            Civil Sector Insights
+                        </h1>
+                    </div>
+                    <div class="col-lg-4 hero-anim ms-lg-auto mt-4 mt-lg-0">
+                        <p class="hero-subtitle text-white m-0 text-start">
+                            Hiring trends, leadership perspectives, and market commentary from within U.S. civil
+                            construction.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="about-section bg-white">
-            <div class="container p-0">
+        <section class="title-section bg-white py-3">
+            <div class="content-container text-start">
+                <p class="section-title text-black m-0 title-anim text-start">
+                    The civil construction market moves quickly. Project pipelines shift, talent markets
+                    tighten, and the pressure on GCs to find and retain the right leaders does not let up.
+                </p>
+            </div>
+        </section>
 
-                <div class="text-section">
-                    <div class="text-content">
-                        <ul class="stats-list">
-                            <li>The average U.S. construction executive is 58 years old</li>
-                            <li>45% of leadership positions are held by individuals over 55</li>
-                            <li>41% of the construction workforce is projected to retire by 2031</li>
-                            <li>Only 35% of U.S. construction firms have a formal succession plan</li>
-                            <li>Companies with a documented succession plan trade at a 40% premium to industry
-                                average</li>
-                        </ul>
-                        <p class="stats-conclusion">Most GCs know the problem exists. Few have done anything about
-                            it.</p>
+        <section class="py-5 insights-section">
+            <div class="container responsive-container">
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-lg-3" style="padding-left: 0px;">
+                        <a href="#" class="insight-card">
+                            <div class="insight-img" style="background-image:url('images/Civil-1.webp');"></div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3" style="padding-left: 0px;">
+                        <a href="#" class="insight-card">
+                            <div class="insight-img" style="background-image:url('images/Civil-2.webp');"></div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3" style="padding-left: 0px;">
+                        <a href="#" class="insight-card">
+                            <div class="insight-img" style="background-image:url('images/Civil-3.webp');"></div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3" style="padding-right: 0px;">
+                        <a href="#" class="insight-card">
+                            <div class="insight-img" style="background-image:url('images/Civil-4.webp');"></div>
+                        </a>
                     </div>
                 </div>
 
-                <div class="text-section">
-                    <h2 class="section-title">What we do</h2>
-                    <div class="text-content">
-                        <p>We work with GC owners and senior leadership teams thinking beyond the next hire. Not
-                            recruitment — a strategic conversation about who runs the business in five years, and
-                            what needs to happen between now and then.</p>
-                    </div>
+                <div class="text-center mt-5">
+                    <a href="#" class="follow-link">
+                        Follow @bowenexecutive
+                    </a>
                 </div>
-
-                <div class="leadership-assessment-section">
-                    <div class="la-image-overlay la-bg-1">
-                        <div class="la-text-top">
-                            <h2>Structural Engineering</h2>
-                        </div>
-                        <div class="la-text-bottom">
-                            <p>Designing robust foundations and load-bearing frameworks for commercial and residential
-                                developments.</p>
-                        </div>
-                    </div>
-                    <div class="la-image-overlay la-bg-2">
-                        <div class="la-text-top">
-                            <h2>Project Management</h2>
-                        </div>
-                        <div class="la-text-bottom">
-                            <p>Overseeing construction timelines, resource allocation, and site safety from
-                                groundbreaking to completion.</p>
-                        </div>
-                    </div>
-                    <div class="la-image-overlay la-bg-3">
-                        <div class="la-text-top">
-                            <h2>Sustainable Infrastructure</h2>
-                        </div>
-                        <div class="la-text-bottom">
-                            <p>Integrating eco-friendly materials and energy-efficient designs into modern urban
-                                environments.</p>
-                        </div>
-                    </div>
-                    <div class="la-overlay-tint"></div>
-                </div>
-
-                <div class="text-section" style="margin-bottom: 0;">
-                    <h2 class="section-title">Who this is for</h2>
-                    <div class="text-content">
-                        <p>GC owners and senior leaders who have built something worth protecting — and want the
-                            right people in place to continue it.</p>
-                    </div>
-                </div>
-
             </div>
         </section>
     </main>
@@ -463,7 +315,7 @@
                             <li><a href="./index.html">Home</a></li>
                             <li><a href="#">Civil Insight</a></li>
                             <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -482,122 +334,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="header_footer.js" defer></script>
-    <script src="about.js"></script>
-
-    <!-- Extra page-specific animation for the new stats list & assessment image block -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-                gsap.registerPlugin(ScrollTrigger);
-
-                // Stats list reveal. about.js already fades in every <p> inside
-                // .text-content (including .stats-conclusion) on the same
-                // "top 80%" trigger, so we only need to handle the <li> bullets
-                // here — same start point keeps everything in sync without
-                // double-tweening the conclusion line.
-                document.querySelectorAll(".stats-list").forEach((list) => {
-                    const section = list.closest(".text-section");
-
-                    gsap.from(list.querySelectorAll("li"), {
-                        y: 16,
-                        opacity: 0,
-                        duration: 0.5,
-                        ease: "power3.out",
-                        stagger: 0.08,
-                        scrollTrigger: {
-                            trigger: section || list,
-                            start: "top 80%",
-                            toggleActions: "play none none reverse",
-                        },
-                    });
-                });
-
-                // Leadership Assessment block - mirrors the exact reveal used for
-                // .image-frame-container in about.js: the frame unclips/scales in,
-                // the background image settles from a slight zoom, then the
-                // overlay copy fades up on top.
-                gsap.fromTo(
-                    ".leadership-assessment-section",
-                    {
-                        clipPath: "inset(12% round 12px)",
-                        scale: 1.08,
-                        opacity: 0,
-                    },
-                    {
-                        clipPath: "inset(0% round 12px)",
-                        scale: 1,
-                        opacity: 1,
-                        duration: 1.2,
-                        ease: "power4.out",
-                        scrollTrigger: {
-                            trigger: ".leadership-assessment-section",
-                            start: "top 85%",
-                            toggleActions: "play none none reverse",
-                        },
-                    },
-                );
-
-                gsap.fromTo(
-                    ".leadership-assessment-section .la-bg-1",
-                    { scale: 1.15 },
-                    {
-                        scale: 1,
-                        duration: 1.8,
-                        ease: "power2.out",
-                        scrollTrigger: {
-                            trigger: ".leadership-assessment-section",
-                            start: "top 85%",
-                            toggleActions: "play none none reverse",
-                        },
-                    },
-                );
-
-                gsap.from(".leadership-assessment-section .la-text-top, .leadership-assessment-section .la-text-bottom", {
-                    y: 30,
-                    opacity: 0,
-                    duration: 0.8,
-                    ease: "power3.out",
-                    stagger: 0.15,
-                    scrollTrigger: {
-                        trigger: ".leadership-assessment-section",
-                        start: "top 80%",
-                        toggleActions: "play none none reverse",
-                    },
-                });
-
-                // Pin the section and crossfade la-bg-1 -> la-bg-2 -> la-bg-3 as the
-                // user keeps scrolling. The overlay copy (title/subtitle) sits above
-                // the images with its own z-index, so it stays put on screen while
-                // the images change behind it. Once the scroll distance ("+=1500")
-                // is used up, the section unpins and the page continues normally
-                // into the next ("Who this is for") section.
-                const laImages = gsap.utils.toArray(".leadership-assessment-section .la-image-overlay");
-
-                if (laImages.length > 1) {
-                    const laImageTl = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: ".leadership-assessment-section",
-                            start: "center center",
-                            end: "+=1500",
-                            pin: true,
-                            scrub: true,
-                            anticipatePin: 1,
-                        },
-                    });
-
-                    for (let i = 1; i < laImages.length; i++) {
-                        laImageTl.to(laImages[i], {
-                            opacity: 1,
-                            duration: 1,
-                            ease: "none",
-                        });
-                    }
-                }
-
-                ScrollTrigger.refresh();
-            }
-        });
-    </script>
+    <script src="civil_inside.js"></script>
 </body>
 
 </html>
