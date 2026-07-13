@@ -6,16 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bowen Executive - Contact Page</title>
 
+    <!-- Bootstrap Link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
+    <!-- Preconnecters -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
+    <!-- Extrnal CSS -->
     <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="contact.css">
 
+    <!-- Google font -->
     <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
@@ -25,6 +31,7 @@
             rel="stylesheet">
     </noscript>
 
+    <!-- GSAP & Lenis Smooth Scroll -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js" defer></script>
@@ -32,24 +39,22 @@
 
 <body class="loading">
 
+    <!-- Pre-loader -->
     <div class="preloader">
         <img src="images/Logo.svg" alt="Logo Loader" class="loader-logo">
     </div>
 
+    <!-- Header -->
     <div class="mobile-nav-overlay" aria-hidden="true" role="navigation">
         <div class="mobile-nav-close" aria-label="Close menu" role="button" tabindex="0">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor"
-                stroke-width="3" stroke-linecap="round" style="display:inline-block;vertical-align:-0.125em">
-                <line x1="4" y1="4" x2="20" y2="20" />
-                <line x1="20" y1="4" x2="4" y2="20" />
-            </svg>
+            <img src="./icons/cross.svg" alt="cross" height="24" width="24">
         </div>
         <ul class="mobile-nav-links">
             <li><a href="./index.html">Home</a></li>
             <li><a href="#">Services</a></li>
-            <li><a href="#">Civil Insight</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#" class="mobile-contact-btn">Contact</a></li>
+            <li><a href="./civil_inside.html">Civil Insight</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="#" class="mobile-contact-btn active">Contact</a></li>
         </ul>
     </div>
 
@@ -66,19 +71,14 @@
                             width="24">
                     </a>
                 </li>
-                <li><a href="#">Civil Insight</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="./civil_inside.html">Civil Insight</a></li>
+                <li><a href="./about.html">About</a></li>
             </ul>
             <div class="nav-contact">
-                <a href="contact.html" class="btn-outline">Contact</a>
+                <a href="#" class="btn-outline active">Contact</a>
             </div>
             <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
-                <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor"
-                    stroke-width="2.5" stroke-linecap="round" style="display:inline-block;vertical-align:-0.125em">
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <line x1="3" y1="12" x2="21" y2="12" />
-                    <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
+                <img src="./icons/hamburger.svg" alt="hamburger" height="24" width="24">
             </div>
         </nav>
     </header>
@@ -96,7 +96,7 @@
                     <li><a href="#" class="inner-dropdown-close">Services <img src="icons/drop-down.svg"
                                 alt="Dropdown Arrow" height="24" width="24"
                                 style="filter: invert(1); transform: rotate(180deg);"></a></li>
-                    <li><a href="#">Civil Insight</a></li>
+                    <li><a href="./civil_inside.html">Civil Insight</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
                 <div class="dropdown-nav-contact">
@@ -276,7 +276,7 @@
         <div class="contact-banner-wrapper">
             <div class="contact-banner">
                 <div class="banner-content">
-                    <p class="banner-intro">Open to a confidential conversation about your next<br>move? Reach out
+                    <p class="banner-intro">Open to a confidential conversation about your next move? Reach out
                         directly. No pressure, no noise.</p>
                     <h2>Nick Prokop</h2>
                     <p class="banner-sub">Bowen Executive</p>
@@ -335,17 +335,21 @@
                     <div class="footer-col links-col">
                         <h4>Core Services</h4>
                         <ul>
-                            <li><a href="#">Civil Site Superintendent Specialisation</a></li>
-                            <li><a href="#">Retained Executive Search</a></li>
-                            <li><a href="#">Leadership Continuity & Succession</a></li>
+                            <li><a href="./civil_site_superintendent_specialisation.html">
+                                    Civil Site Superintendent
+                                    Specialisation
+                                </a></li>
+                            <li><a href="./retained_executive_search.html">Retained Executive Search</a></li>
+                            <li><a href="./leadership_continuity_succession.html">Leadership Continuity & Succession</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="footer-col links-col small-col">
                         <h4>All</h4>
                         <ul>
                             <li><a href="./index.html">Home</a></li>
-                            <li><a href="#">Civil Insight</a></li>
-                            <li><a href="#">About</a></li>
+                            <li><a href="./civil_inside.html">Civil Insight</a></li>
+                            <li><a href="./about.html">About</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
@@ -363,8 +367,9 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Link JS -->
     <script src="header_footer.js" defer></script>
+    <script src="animations.js" defer></script>
     <script src="contact.js"></script>
 </body>
 
