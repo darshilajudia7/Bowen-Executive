@@ -72,7 +72,7 @@ body {
 /* HERO SECTION */
 .hero-section {
   min-height: 600px;
-  background: url("images/homepage.webp") center/cover no-repeat;
+  background: url("images/homepages-1.webp") center/cover no-repeat;
   display: flex;
   align-items: flex-end;
   padding-bottom: 3rem;

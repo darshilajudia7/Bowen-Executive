@@ -58,7 +58,7 @@ body {
 /* Hero Section */
 .hero-section {
   height: 600px;
-  background: url("images/homepage.webp") 50% 0% / cover no-repeat;
+  background: url("images/homepages-1.webp") 50% 0% / cover no-repeat;
   overflow: hidden;
 }
 
