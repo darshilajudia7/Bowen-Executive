@@ -123,10 +123,6 @@ body.loading {
   width: 100%;
 }
 
-.nav-arrow {
-  font-size: 10px;
-}
-
 .nav-contact {
   display: flex;
   justify-content: flex-end;
@@ -327,10 +323,20 @@ body.loading {
   align-items: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .banner-contact-links a:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  opacity: 0.8;
+}
+
+.banner-contact-links a img {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.banner-contact-links a:hover img {
+  transform: scale(1.15) rotate(5deg);
 }
 
 .nick-img {
@@ -407,6 +413,18 @@ body.loading {
   margin-right: 0.5rem;
 }
 
+.social-links a {
+  display: inline-block;
+  transition:
+    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    filter 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-4px) scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(255, 202, 0, 0.4));
+}
+
 .footer-links-wrapper {
   display: flex;
   gap: 8rem;
@@ -428,10 +446,29 @@ body.loading {
   font-size: var(--link-size);
   transition: color 0.3s ease;
   font-weight: 600;
+  position: relative;
 }
 
 .links-col ul a:hover {
   color: var(--primary);
+  /* Nudges the link slightly to the right */
+  transform: translateX(6px);
+}
+
+/* Animated Underline Effect */
+.links-col ul a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.links-col ul a:hover::after {
+  width: 100%;
 }
 
 .footer-bottom {
@@ -444,8 +481,11 @@ body.loading {
 }
 
 .footer-bottom p {
-  font-size: var(--tag-size);
   color: var(--grey);
+  font-family: Sharp Sans;
+  font-weight: 600;
+  font-style: Semibold;
+  font-size: 18px;
 }
 
 .footer-overlay {
@@ -517,40 +557,6 @@ body.loading {
   padding: 3rem 4rem 3rem 4rem;
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-}
-
-.dropdown-close {
-  position: absolute;
-  top: 1.8rem;
-  right: 2.5rem;
-  background: none;
-  border: none;
-  font-size: 1.6rem;
-  color: var(--dark);
-  cursor: pointer;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.dropdown-close:hover {
-  background: var(--primary);
-  color: var(--dark);
-}
-
-.dropdown-header {
-  display: flex;
-  align-items: baseline;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-navbar {
@@ -650,7 +656,6 @@ body.loading {
   transform: scale(1.12);
 }
 
-/* Overlay fade-in on hover, unified with all other image cards (.webp) */
 .dd-card-img::before {
   content: "";
   position: absolute;
@@ -670,7 +675,6 @@ body.loading {
   opacity: 1;
 }
 
-/* Shine sweep on hover, unified with all other image cards (.webp) */
 .dd-card-img::after {
   content: "";
   position: absolute;
@@ -969,10 +973,5 @@ body.loading {
     padding: 6rem 1.5rem 2.5rem;
     overflow-y: auto;
     max-height: 100vh;
-  }
-
-  .dropdown-header {
-    flex-direction: column;
-    gap: 0.5rem;
   }
 }

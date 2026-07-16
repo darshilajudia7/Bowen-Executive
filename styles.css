@@ -549,19 +549,40 @@ h3 {
   font-weight: 600;
   width: 167px;
   height: 40px;
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: all 0.35s ease;
 }
 
-.btn-solid:hover {
+.btn-solid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: var(--primary);
-  color: var(--light);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  border-radius: inherit;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+}
+
+.btn-solid:hover::before,
+.btn-solid:active::before,
+.btn-solid.active::before {
+  transform: translateY(0);
+}
+
+.btn-solid:hover,
+.btn-solid:active,
+.btn-solid.active {
+  color: var(--dark);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
 .insights-grid {
@@ -672,7 +693,7 @@ h3 {
 .follow-container a {
   position: relative;
   display: inline-block;
-  color: #ffffff;
+  color: var(--primary);
   text-decoration: none;
   font-weight: 600;
   padding-bottom: 4px;
@@ -680,7 +701,7 @@ h3 {
 }
 
 .follow-container a:hover {
-  color: #ffca00;
+  color: #ffffff;
 }
 
 .follow-container a::after {
@@ -691,7 +712,7 @@ h3 {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #ffca00;
+  background-color: #ffffff;
   transform-origin: bottom right;
   transition: transform 0.3s cubic-bezier(0.86, 0, 0.07, 1);
 }
@@ -735,6 +756,10 @@ h3 {
     min-height: 700px;
   }
 
+  .hero-slide {
+    padding: 8rem 2rem 3rem 2rem;
+  }
+
   .hero-content {
     flex-direction: column;
     align-items: flex-start;
@@ -742,6 +767,10 @@ h3 {
   }
 
   .hero-text-left h1 {
+    max-width: 100%;
+  }
+
+  .hero-text-right {
     max-width: 100%;
   }
 
@@ -784,6 +813,10 @@ h3 {
   }
 
   .hero-section {
+    padding: 8rem 1.5rem 3rem;
+  }
+
+  .hero-slide {
     padding: 8rem 1.5rem 3rem;
   }
 

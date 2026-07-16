@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Cinematic Hero Text Reveal
     gsap.from(".gs-reveal", {
       y: 100,
       opacity: 0,
@@ -12,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
       delay: 0.2,
     });
 
-    // Parallax Background for Hero
     gsap.to(".hero-section", {
       backgroundPosition: "50% 100%",
       ease: "none",
@@ -24,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    // Subtle Title Section Reveal
     gsap.from(".section-title", {
       scrollTrigger: {
         trigger: ".title-section",
@@ -37,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "power3.out",
     });
 
-    // Insight Cards Scroll Stagger Reveal (Animates the whole card on entry)
     gsap.from(".insight-card", {
       scrollTrigger: {
         trigger: ".insights-section",
@@ -52,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "back.out(1.2)",
     });
 
-    // Advanced 3D Hover Mouse Tracking (Targeting purely the image wrapper now)
     const tiltElements = document.querySelectorAll(".js-tilt");
 
     tiltElements.forEach((el) => {
@@ -76,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
 
-      // Elastic Snap Back on Mouse Leave
       el.addEventListener("mouseleave", () => {
         gsap.to(el, {
           rotateX: 0,

@@ -1,22 +1,383 @@
+/* ============================================
+   BOWEN EXECUTIVE — GLOBAL ANIMATIONS
+   Shared hover states, reveal animations, and
+   uniform button & .webp image effects.
+   ============================================ */
+
+/* ------------------------------------------
+   1. WEBP IMAGE HOVER — Scale + Shine Sweep
+   Applied to all containers wrapping .webp:
+   .service-img-wrapper, .dd-card-img,
+   .img-wrapper, .image-container, .nick-img
+   ------------------------------------------ */
+.service-img-wrapper,
+.dd-card-img,
+.img-wrapper,
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.4s ease;
+}
+
+.service-img-wrapper:hover,
+.dd-card-img:hover,
+.img-wrapper:hover,
+.image-container:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Scale zoom on image inside wrapper */
+.service-img-wrapper img,
+.dd-card-img img,
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.service-img-wrapper:hover img,
+.dd-card-img:hover img,
+.image-container:hover img {
+  transform: scale(1.12);
+}
+
+/* Gradient overlay on hover */
+.service-img-wrapper::before,
+.dd-card-img::before,
+.img-wrapper::before,
+.image-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.service-img-wrapper:hover::before,
+.dd-card-img:hover::before,
+.img-wrapper:hover::before,
+.image-container:hover::before {
+  opacity: 1;
+}
+
+/* Shine sweep effect */
+.service-img-wrapper::after,
+.dd-card-img::after,
+.img-wrapper::after,
+.image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.service-img-wrapper:hover::after,
+.dd-card-img:hover::after,
+.img-wrapper:hover::after,
+.image-container:hover::after {
+  left: 150%;
+}
+
+/* ------------------------------------------
+   2. BUTTON HOVER — Unified across all pages
+   .btn-outline, .btn-solid, .btn-solid-dark,
+   .btn-warning, .nav-arrow-btn, .dd-arrow-btn
+   ------------------------------------------ */
+
+/* Primary outline button (nav Contact) */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 36px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: var(--light, #fff);
+  color: var(--dark, #000);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: all 0.35s ease;
+  text-decoration: none;
+}
+
+.btn-outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ffca00;
+  border-radius: inherit;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+}
+
+.btn-outline:hover::before,
+.btn-outline:active::before,
+.btn-outline.active::before {
+  transform: translateY(0);
+}
+
+.btn-outline:hover,
+.btn-outline:active,
+.btn-outline.active {
+  color: var(--dark, #000);
+  border-color: #ffca00;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Solid white button (insights section) */
+.btn-solid {
+  background: #fff;
+  color: #000;
+  padding: 8px 24px;
+  border-radius: 44px;
+  font-weight: 600;
+  width: 167px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: all 0.35s ease;
+}
+
+.btn-solid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ffca00;
+  border-radius: inherit;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+}
+
+.btn-solid:hover::before {
+  transform: translateY(0);
+}
+
+.btn-solid:hover {
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Solid dark button (dropdown contact) */
+.btn-solid-dark {
+  background: #000;
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 44px;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: all 0.35s ease;
+}
+
+.btn-solid-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ffca00;
+  border-radius: inherit;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+}
+
+.btn-solid-dark:hover::before {
+  transform: translateY(0);
+}
+
+.btn-solid-dark:hover {
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Warning button (contact form submit) */
+.btn-warning {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #ffca00 !important;
+  border: 1px solid #ffca00 !important;
+  color: #000 !important;
+  transition: all 0.35s ease;
+}
+
+.btn-warning::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 120%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: skewX(-25deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.btn-warning:hover::after {
+  left: 130%;
+}
+
+.btn-warning:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(255, 202, 0, 0.35);
+  color: #000 !important;
+  background: #ffca00 !important;
+}
+
+.btn-warning:active {
+  transform: translateY(0) scale(0.98);
+  transition: all 0.15s ease;
+}
+
+/* Arrow nav buttons (services carousel, sectors) */
+.nav-arrow-btn {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-arrow-btn:hover {
+  border-color: currentColor;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.08);
+}
+
+.nav-arrow-btn:active {
+  transform: scale(0.94);
+}
+
+/* Dropdown arrow buttons */
+.dd-arrow-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.dd-arrow-btn:hover {
+  transform: scale(1.15);
+}
+
+/* Arrow-link circular badge (service cards) */
+.arrow-link {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  background: #ffca00;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-card:hover .arrow-link,
+.service-card.active .arrow-link {
+  transform: scale(1.1) rotate(-45deg);
+}
+
+/* dd-arrow circular badge (dropdown cards) */
+.dd-arrow {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  background: #ffca00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #000;
+  transition: transform 0.3s ease;
+  margin-top: 2px;
+}
+
+.dd-card:hover .dd-arrow {
+  transform: translateX(4px) scale(1.08);
+}
+
+/* ------------------------------------------
+   3. INTERSECTION OBSERVER REVEAL CLASSES
+   Used by animations.js for scroll reveals
+   ------------------------------------------ */
 .reveal-img {
   opacity: 0;
-  transform: scale(0.94);
+  transform: scale(0.97) translateY(20px);
   transition:
-    opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
 }
 
 .reveal-img.is-visible {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1) translateY(0);
 }
 
 .reveal-content {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(24px);
   transition:
-    opacity 0.7s ease,
-    transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  will-change: opacity, transform;
+  transition-delay: 0.15s;
 }
 
 .reveal-content.is-visible {
@@ -24,15 +385,89 @@
   transform: translateY(0);
 }
 
-.reveal-content.is-visible > * {
-  transition-delay: calc(var(--reveal-index, 0) * 0.08s);
+/* ------------------------------------------
+   4. SOCIAL ICON HOVER
+   ------------------------------------------ */
+.social-links a img {
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .reveal-img,
-  .reveal-content {
-    transition: none;
-    opacity: 1;
-    transform: none;
-  }
+.social-links a:hover img {
+  transform: translateY(-3px) scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* ------------------------------------------
+   5. BANNER CONTACT LINKS HOVER
+   ------------------------------------------ */
+.banner-contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.banner-contact-links a:hover {
+  transform: translateY(-3px);
+  color: #000;
+}
+
+/* ------------------------------------------
+   6. FOLLOW CONTAINER LINK
+   ------------------------------------------ */
+.follow-container a,
+.follow-link {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.follow-container a::after,
+.follow-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffca00;
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.follow-container a:hover,
+.follow-link:hover {
+  color: #ffca00;
+}
+
+.follow-container a:hover::after,
+.follow-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* ------------------------------------------
+   7. FOOTER LINK HOVER
+   ------------------------------------------ */
+.links-col ul a {
+  color: #9a9a9a;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 8px 0;
+}
+
+.links-col ul a:hover {
+  color: #ffca00;
+  transform: translateX(4px);
 }

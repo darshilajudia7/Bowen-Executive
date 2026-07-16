@@ -30,8 +30,6 @@
   font-display: swap;
 }
 
-/* Fonts (Keep your existing font-faces here) */
-
 :root {
   --font-sharp: "Sharp Sans", sans-serif;
 }
@@ -95,10 +93,8 @@ body {
   position: relative;
   display: block;
   text-decoration: none;
-  /* 3D and hover properties removed from the card to keep text static */
 }
 
-/* 3D Img Wrapper */
 .img-wrapper {
   position: relative;
   display: block;

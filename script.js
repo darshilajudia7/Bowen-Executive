@@ -1,38 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // SETUP & INITIALIZATION
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
   }
 
+  // Native smooth scrolling is enabled site-wide via CSS (scroll-behavior: smooth in header_footer.css).
   const reduceMotionQuery = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   );
-  let lenis;
 
-  if (!reduceMotionQuery.matches && typeof Lenis !== "undefined") {
-    lenis = new Lenis({
-      duration: 0.35,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-      direction: "vertical",
-      gestureDirection: "vertical",
-      smooth: true,
-      smoothWheel: true,
-      syncTouch: true,
-      touchMultiplier: 1.5,
-      wheelMultiplier: 1.1,
-      infinite: false,
-    });
-
-    lenis.on("scroll", ScrollTrigger.update);
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-    gsap.ticker.lagSmoothing(0);
-  } else {
-    document.documentElement.style.scrollBehavior = "smooth";
-  }
-
-  // TEXT SPLIT ANIMATION PREP
   const splitElements = document.querySelectorAll(".split-text");
   splitElements.forEach((el) => {
     const text = el.innerHTML;
@@ -68,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // GENERAL ANIMATIONS
   gsap.to(".hero-section .anim-char", {
     translateY: "0%",
     duration: 1.1,
@@ -76,6 +50,19 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power4.out",
     delay: 0.2,
   });
+
+  // Every hero slide's own heading (even the ones without .split-text/.anim-char) animates in.
+  document.querySelectorAll(".hero-slide .hero-text-left h1:not(.split-text)").forEach((h1) => {
+    gsap.set(h1, { opacity: 0, y: 50 });
+  });
+  gsap.to(".hero-slide.active .hero-text-left h1:not(.split-text)", {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: "power4.out",
+    delay: 0.25,
+  });
+
   gsap.from(".hero-text-right", {
     y: 40,
     opacity: 0,
@@ -83,6 +70,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
     delay: 0.4,
   });
+
+  // Ken-Burns style entrance for the active slide's background/video
+  gsap.fromTo(
+    ".hero-slide.active .slide-bg, .hero-slide.active .slide-bg-video",
+    { scale: 1.12, opacity: 0.6 },
+    { scale: 1, opacity: 1, duration: 1.6, ease: "power2.out" }
+  );
 
   document.querySelectorAll("section").forEach((section) => {
     const chars = section.querySelectorAll(".anim-char");
@@ -119,7 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTrigger: { trigger: ".insights-grid", start: "top 75%" },
   });
 
-  // STAT COUNTER ANIMATIONS
   document.querySelectorAll(".stat-number").forEach((stat) => {
     const targetVal = parseInt(stat.getAttribute("data-val"));
     const formatText = stat.textContent;
@@ -142,7 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // PARALLAX EFFECTS
   document.querySelectorAll(".service-card img").forEach((img) => {
     gsap.fromTo(
       img,
@@ -175,7 +167,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   );
 
-  // SLIDER LOGIC
   const sliderContainer = document.querySelector(".services-slider-container");
   const sliderGrid = document.getElementById("services-slider");
   const prevBtn = document.getElementById("prev-btn");
@@ -248,7 +239,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(updateActiveCard, 100);
   }
 
-  // VIDEO HERO SLIDER LOGIC
   const slides = document.querySelectorAll(".hero-slide");
   const dots = document.querySelectorAll(".pagination .dot");
   const playBtn = document.querySelector(".play-btn");
@@ -278,6 +268,23 @@ document.addEventListener("DOMContentLoaded", () => {
     if (newVideo && isPlaying) {
       newVideo.currentTime = 0;
       newVideo.play();
+    }
+
+    if (typeof gsap !== "undefined") {
+      const activeSlide = slides[currentSlide];
+      const heading = activeSlide.querySelector(".hero-text-left h1");
+      const sub = activeSlide.querySelector(".hero-text-right");
+      const bg = activeSlide.querySelector(".slide-bg, .slide-bg-video");
+
+      if (heading) {
+        gsap.fromTo(heading, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.9, ease: "power4.out" });
+      }
+      if (sub) {
+        gsap.fromTo(sub, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.15 });
+      }
+      if (bg) {
+        gsap.fromTo(bg, { scale: 1.12, opacity: 0.6 }, { scale: 1, opacity: 1, duration: 1.6, ease: "power2.out" });
+      }
     }
   }
 
@@ -317,7 +324,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ADVANCED 3D HOVER MOUSE TRACKING (For Insight Images)
   if (typeof gsap !== "undefined") {
     const tiltElements = document.querySelectorAll(".js-tilt");
 
@@ -342,7 +348,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
 
-      // Elastic Snap Back on Mouse Leave
       el.addEventListener("mouseleave", () => {
         gsap.to(el, {
           rotateX: 0,

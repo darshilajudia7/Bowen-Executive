@@ -434,7 +434,6 @@ body {
   transform: scale(1.12);
 }
 
-/* Base tint + overlay fade-in on hover, unified with all other image cards (.webp) */
 .image-container::before {
   content: "";
   position: absolute;

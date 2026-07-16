@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     const preloader = document.querySelector('.preloader');
 
-    // MOBILE NAV
     const hamburger = document.querySelector('.hamburger');
     const mobileOverlay = document.querySelector('.mobile-nav-overlay');
     const mobileClose = document.querySelector('.mobile-nav-close');
@@ -103,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Dropdown Mega-Menu Carousel Slider
     const ddCards = document.querySelector('.dropdown-cards');
     const ddArrowLeft = document.querySelector('.dd-arrow-btn[aria-label="Previous"]');
     const ddArrowRight = document.querySelector('.dd-arrow-btn[aria-label="Next"]');
@@ -134,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // PRELOADER TIMELINE
     if (window.gsap && document.querySelector('.loader-logo')) {
         gsap.set(navbar, { xPercent: -50, x: 0 });
 
@@ -183,7 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // SCROLL ANIMATIONS
     if (window.gsap && window.ScrollTrigger) {
         gsap.registerPlugin(ScrollTrigger);
 

@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  //  SECTORS SLIDER LOGIC
   const slider = document.getElementById("sectors-slider");
   const prevBtn = document.getElementById("prev-btn");
   const nextBtn = document.getElementById("next-btn");
@@ -20,11 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //  GSAP ANIMATIONS
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Cinematic Hero Reveal
     gsap.from(".gs-reveal-up", {
       y: 100,
       opacity: 0,
@@ -34,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
       delay: 0.2,
     });
 
-    // Parallax Background
     gsap.to(".hero-section", {
       backgroundPosition: "50% 100%",
       ease: "none",
@@ -46,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    // Text Section Reveals
     gsap.utils.toArray(".text-section").forEach((section) => {
       const title = section.querySelector(".gs-title-reveal");
       const paragraphs = section.querySelectorAll(".text-content p");
@@ -83,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Stats List Reveal (Leadership page)
     if (document.querySelectorAll(".stats-list").length > 0) {
       document.querySelectorAll(".stats-list").forEach((list) => {
         const section = list.closest(".text-section");
@@ -102,7 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // 3D Image Frame Entrance
     if (document.querySelector(".js-3d-entrance")) {
       gsap.fromTo(
         ".js-3d-entrance",
@@ -129,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
 
-    // Image Sequence Pin & Scrub
     if (document.querySelector(".image-frame-container")) {
       gsap.fromTo(
         ".image-bg-1",
@@ -162,7 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Leadership Assessment Pin & Scrub (Leadership page)
     if (document.querySelector(".leadership-assessment-section")) {
       gsap.fromTo(
         ".leadership-assessment-section",
@@ -234,7 +225,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Market Section Reveal
     if (document.querySelector(".market-section")) {
       const marketTl = gsap.timeline({
         scrollTrigger: {
@@ -263,7 +253,6 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-    // Interactive 3D Map Hover
     const mapWrapper = document.querySelector(".js-tilt");
     if (mapWrapper) {
       mapWrapper.addEventListener("mousemove", (e) => {

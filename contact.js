@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Register plugin safely
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Parallax Background
     gsap.to(".hero-section", {
       backgroundPosition: "50% 100%",
       ease: "none",
@@ -15,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    // 3D Text Reveal (Smoother easing, slightly shorter travel)
     gsap.from(".hero-anim h1, .hero-anim p", {
       y: 60,
       opacity: 0,
@@ -27,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
       delay: 0.1,
     });
 
-    // Title Scrub Reveal
     gsap.from(".title-section h2", {
       scrollTrigger: {
         trigger: ".title-section",
@@ -41,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
       transformOrigin: "left center",
     });
 
-    // Form Info Column Entrance
     gsap.from(".form-section .info-anim > div", {
       scrollTrigger: {
         trigger: ".form-section",
@@ -54,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "power3.out",
     });
 
-    // Form Inputs Entrance
     gsap.from(".custom-form .row, .custom-form .mb-4, .custom-form .text-end", {
       scrollTrigger: {
         trigger: ".custom-form",
